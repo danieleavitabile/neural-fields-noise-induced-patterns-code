@@ -1,6 +1,7 @@
 
-Code for the paper Daniele Avitabile and James MacLaurin, Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks, 2024
+Code for the paper Daniele Avitabile and James MacLaurin, Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks, 2024 
 
+```
 @misc{avitabile2024neuralfieldsnoiseinducedpatterns,
       title={Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks}, 
       author={Daniele Avitabile and James MacLaurin},
@@ -10,3 +11,4 @@ Code for the paper Daniele Avitabile and James MacLaurin, Neural Fields and Nois
       primaryClass={math.PR},
       url={https://arxiv.org/abs/2408.12540}, 
 }
+```
