@@ -3,14 +3,13 @@ clear all, close all, clc;
 
 %% Set path for input data
 % dataPath = './';
-dataPath = '/Users/daniele/GitHub/neural-fields-interacting-particles/Data/2D/Hexagon/Particles/';
+dataPath = '/Users/daniele/GitHub/neural-fields-noise-induced-patterns-code/Data/2D/Hexagon/Particles/';
 
 %% Generate mesh and matrix data, or else load it; save animation
 generateData = false;
 saveAnimation = true;
 
 %% Geometry and mesh parameters 
-% R = 30; hmax = 0.01; 
 R = 30; hmax = 0.03; 
 
 %% Load or generate mesh, synaptic matrix, and FEM matrix
@@ -44,41 +43,21 @@ else
 
 end
 
-% %% Model Parameters
-% p(1) = 10;   % mu    
-% p(2) = 0.6;  % theta 
-% p(3) = 1;    % alpha
-% p(4) = 2;    % beta
-% p(5) = -2.2; % gamma
-% p(6) = 1;    % delta
-% p(7) = 3.5;  % nu     
-% p(8) = 5;    % tau   
-% p(9) = 0.2;  % D spiral
-% % p(9) = 0.5;  % D travelling
-% % p(9) = 1;  % D travelling
-% % p(9) = 5;  % D travelling
-% % p(9) = 10.0;  % D oscillations
-
 %% Initial condition
 x = mesh.nodes(:,1); y = mesh.nodes(:,2); n = length(x);
 iU = 1:n; iV = n+iU;
-% u0 = zeros(n,1); u0(find(y > 0)) = 1;
-% v0 = zeros(n,1); v0(find(x < 0)) = 4;
-% z0 = [u0; v0];
-% u0 = zeros(n,1); u0(find(x > 0)) = 4;
-% v0 = zeros(n,1); v0(find(x > 0)) = 4;
-% z0 = [u0; v0];
 sol  = load('spiral-h-0.03.mat');
 z0 = sol.z; p = sol.p;
 p(7) = 1.0;
-% p(9) = 0.1;
+% The .mat file has D = sigma = 0, uncomment here for D = 0.1, that is, sigma = 0.4472 
+p(9) = 0.1; 
 
 %% Time step
 D = p(9);
 sigma = sqrt(2*D); ISparse = speye(2*n);
 a = @(t,z) NeuralField(t,z,p,M);
 b = @(t,z) sigma*ISparse;
-tspan = [0 50];
+tspan = [0 100];
 dt = 0.1;
 [~,~,t,zHist] = EulerMaruyama(a,b,tspan,z0,dt);
 
@@ -110,6 +89,9 @@ PlotAnimationSnapshot(101,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
 exportgraphics(gcf,'t_10.0.eps','BackgroundColor','none','Resolution',400);
 PlotAnimationSnapshot(500,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
 exportgraphics(gcf,'t_50.0.eps','BackgroundColor','none','Resolution',400);
+
+fileName = fullfile(dataPath,'historyData.mat');
+save(fileName, 't', 'zHist', 'mesh');
 
 
 

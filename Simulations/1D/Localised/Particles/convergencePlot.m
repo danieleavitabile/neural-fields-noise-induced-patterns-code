@@ -20,14 +20,13 @@ plot(u,G(u));
 uStar = 0.2;
 uStar = fsolve(G,uStar)
 
-
 %% Function handle for initial condition
 u0Fun = @(x) uStar + u0Max./cosh(u0Alpha*x);
 
 %% Mean field grid
 q = 2^7; dx = 2*L/q; x = -L+[0:q-1]'*dx;
 
-%% Number of particles and particles grid (their ratio must be a multiplee of 2)
+%% Number of particles and particles grid (their ratio must be a multiple of 2)
 r = 2^3; n = q*r; dxi = 2*L/n; xi = -L+[0:n-1]'*dxi;
 
 %% Kerenel's FFT in both mean field and particle system
