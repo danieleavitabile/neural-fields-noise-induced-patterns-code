@@ -78,15 +78,25 @@ if saveAnimation
   figure; SaveAnimation(t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U,fileName);
 end
 
+% figure;
+% plotOpts.U.markerSize = 30;
+% PlotAnimationSnapshot(1,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
+% exportgraphics(gcf,'t_0.0.eps','BackgroundColor','none','Resolution',400);
+% PlotAnimationSnapshot(51,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
+% exportgraphics(gcf,'t_5.0.eps','BackgroundColor','none','Resolution',400);
+% PlotAnimationSnapshot(101,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
+% exportgraphics(gcf,'t_10.0.eps','BackgroundColor','none','Resolution',400);
+% PlotAnimationSnapshot(500,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
+% exportgraphics(gcf,'t_50.0.eps','BackgroundColor','none','Resolution',400);
 figure;
 plotOpts.U.markerSize = 30;
 PlotAnimationSnapshot(1,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
 exportgraphics(gcf,'t_0.0.eps','BackgroundColor','none','Resolution',400);
+PlotAnimationSnapshot(11,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
+exportgraphics(gcf,'t_1.0.eps','BackgroundColor','none','Resolution',400);
 PlotAnimationSnapshot(51,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
 exportgraphics(gcf,'t_5.0.eps','BackgroundColor','none','Resolution',400);
-PlotAnimationSnapshot(101,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
-exportgraphics(gcf,'t_10.0.eps','BackgroundColor','none','Resolution',400);
-PlotAnimationSnapshot(500,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
+PlotAnimationSnapshot(501,t,zHist(:,iU),mesh.nodes,mesh.elements,plotOpts.U);
 exportgraphics(gcf,'t_50.0.eps','BackgroundColor','none','Resolution',400);
 
 fileName = fullfile(dataPath,'historyData.mat');
