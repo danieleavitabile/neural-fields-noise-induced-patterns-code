@@ -35,7 +35,7 @@ switch simType
   case 'Turing unstable'
 
     % Parameters
-    alpha = 10; theta  = 0.9; D = 0.5; B = 0.4; A = 1.0; u0Max = 0.3; u0Alpha = 0.25; L = 10*pi; 
+    alpha = 10; theta = 0.9; D = 0.5; B = 0.4; A = 1.0; u0Max = 0.3; u0Alpha = 0.25; L = 10*pi; 
 
     % Function handle for initial condition
     xic = 9*pi/L; u0Fun = @(x) u0Max*cos(xic*x);

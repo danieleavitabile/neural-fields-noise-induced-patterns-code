@@ -3,8 +3,8 @@ clear all, close all, clc;
 
 %% Parameters 
 % alpha = 10; theta  = 0.9; D = 0.0; B = 0.4; A = 1.0; u0Max = 5; u0Alpha = 0.25; L = 10*pi; % 1 bump
-% alpha = 10; theta  = 0.9; D = 0.1; B = 0.4; A = 1.0; u0Max = 5; u0Alpha = 0.25; L = 10*pi; % 3 bumps
-alpha = 10; theta  = 0.9; D = 0.5; B = 0.4; A = 1.0; u0Max = 5; u0Alpha = 0.25; L = 10*pi; % Turing
+alpha = 10; theta  = 0.9; D = 0.1; B = 0.4; A = 1.0; u0Max = 5; u0Alpha = 0.25; L = 10*pi; % 3 bumps
+% alpha = 10; theta  = 0.9; D = 0.5; B = 0.4; A = 1.0; u0Max = 5; u0Alpha = 0.25; L = 10*pi; % Turing
 
 %% Funcion handle for the synaptic kernel
 wFun = @(x) A*exp(-B*abs(x)).*(B*sin(abs(x)) + cos(x) );
