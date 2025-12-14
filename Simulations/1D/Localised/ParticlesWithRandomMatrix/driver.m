@@ -12,8 +12,8 @@ generateWeightMatrix = false;
 
 %% Simulation type
 % simType = 'Turing stable' 
-simType = 'Turing unstable'
-% simType = '3 bumps' 
+% simType = 'Turing unstable'
+simType = '3 bumps' 
 switch simType 
 
   case '3 bumps'
@@ -48,7 +48,6 @@ sigma = sqrt(2*D)
 
 %% Funcion handle for the synaptic kernel
 wFun = @(x) A*exp(-B*abs(x)).*(B*sin(abs(x)) + cos(x) );
-
 
 %% Funcion handles for the firing rates function (particles and mean field)
 phi = @(x) 0.5*(1+erf(x/sqrt(2)));
@@ -101,8 +100,8 @@ fh = figure;
 surf(XI,T,U); shading interp; caxis(cax); view([0 90]); 
 shading interp; xlabel('x'); ylabel('t'); zlabel('u^j_t');
 axis tight; % colorbar;
-axis off;
+% axis off;
 set(fh,'position',pos);
 drawnow;
-exportgraphics(fh,'Figures/particle.jpeg','Resolution',300);
+% exportgraphics(fh,'Figures/particle.jpeg','Resolution',300);
 

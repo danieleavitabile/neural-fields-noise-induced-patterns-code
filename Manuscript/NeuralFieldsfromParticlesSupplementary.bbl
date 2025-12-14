@@ -1,0 +1,15 @@
+\begin{thebibliography}{1}
+
+\bibitem{Massart2019}
+{\sc S.~Boucheron, G.~Lugosi, and P.~Massart}, {\em Concentration Inequalities: A Nonasymptotic Theory of Independence}, Oxford University Press, 2016.
+
+\bibitem{maclaurin2024large}
+{\sc J.~MacLaurin}, {\em Large deviations of a network of interacting particles with sparse random connections}, arXiv preprint arXiv:1607.05471.
+
+\bibitem{tanaka1984limit}
+{\sc H.~Tanaka}, {\em Limit theorems for certain diffusion processes with interaction}, in North-Holland Mathematical Library, vol.~32, Elsevier, 1984, pp.~469--488.
+
+\bibitem{touboulNoiseInducedBehaviorsNeural2012a}
+{\sc J.~Touboul, G.~Hermann, and O.~Faugeras}, {\em Noise-{{Induced Behaviors}} in {{Neural Mean Field Dynamics}}}, SIAM Journal on Applied Dynamical Systems, 11 (2012), pp.~49--81, \url{https://doi.org/10.1137/110832392}.
+
+\end{thebibliography}

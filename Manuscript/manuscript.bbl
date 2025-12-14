@@ -1,0 +1,240 @@
+\begin{thebibliography}{10}
+
+\bibitem{adams2025isochronal}
+{\sc Z.~P. Adams and J.~MacLaurin}, {\em The isochronal phase of stochastic pde and integral equations: Metastability and other properties}, Journal of Differential Equations, 414 (2025), pp.~773--816.
+
+\bibitem{agathe2022multivariate}
+{\sc Z.~Agathe-Nerine}, {\em Multivariate hawkes processes on inhomogeneous random graphs}, Stochastic Processes and their Applications, 152 (2022), pp.~86--148.
+
+\bibitem{amariHomogeneousNetsNeuronlike1975}
+{\sc S.-I. Amari}, {\em Homogeneous nets of neuron-like elements}, Biological Cybernetics, 17 (1975), pp.~211--220, \url{https://doi.org/10.1007/BF00339367}.
+
+\bibitem{avitabileTutorial}
+{\sc D.~Avitabile}, {\em {Numerical Computation of Coherent Structures in Spatially-Extended Systems}}, May 2020, \url{https://doi.org/10.5281/zenodo.3821169}, \url{https://doi.org/10.5281/zenodo.3821169}.
+
+\bibitem{avitabileProjectionMethodsNeural2023}
+{\sc D.~Avitabile}, {\em Projection {{Methods}} for {{Neural Field Equations}}}, SIAM Journal on Numerical Analysis, 61 (2023), pp.~562--591, \url{https://doi.org/10.1137/21M1463768}.
+
+\bibitem{avitabile2024}
+{\sc D.~Avitabile}, {\em {Tutorials on Numerical and Analytical Methods for Spatially-Extended Neurobiological Networks}}, 04 2024, \url{https://doi.org/10.5281/zenodo.11124322}, \url{https://github.com/danieleavitabile/numerical-analysis-mathematical-neuroscience}.
+
+\bibitem{avitabileBumpAttractorsWaves2023}
+{\sc D.~Avitabile, J.~L. Davis, and K.~Wedgwood}, {\em Bump {{Attractors}} and {{Waves}} in {{Networks}} of {{Leaky Integrate-and-Fire Neurons}}}, SIAM Review, 65 (2023), pp.~147--182, \url{https://doi.org/10.1137/20M1367246}.
+
+\bibitem{avitabileLocalTheorySpatioTemporal2020}
+{\sc D.~Avitabile, M.~Desroches, R.~Veltz, and M.~Wechselberger}, {\em Local {{Theory}} for {{Spatio-Temporal Canards}} and {{Delayed Bifurcations}}}, SIAM Journal on Mathematical Analysis, 52 (2020), pp.~5703--5747, \url{https://doi.org/10.1137/19M1306610}.
+
+\bibitem{avitabileMacLaurinCodes}
+{\sc D.~Avitabile and J.~MacLaurin}, {\em {Code for the paper 'Neural fields and noise-induced patterns in neurons on large disordered networks'}}, 2025, \url{https://doi.org/10.5281/zenodo.14616641}, \url{https://doi.org/10.5281/zenodo.14616641}.
+
+\bibitem{bertini2014synchronization}
+{\sc L.~Bertini, G.~Giacomin, and C.~Poquet}, {\em Synchronization and random long time dynamics for mean-field plane rotators}, Probability Theory and Related Fields, 160 (2014), pp.~593--653.
+
+\bibitem{biancalani2017giant}
+{\sc T.~Biancalani, F.~Jafarpour, and N.~Goldenfeld}, {\em Giant amplification of noise in fluctuation-induced pattern formation}, Physical review letters, 118 (2017), p.~018101.
+
+\bibitem{bick2024dynamical}
+{\sc C.~Bick and D.~Sclosa}, {\em Dynamical systems on graph limits and their symmetries}, Journal of Dynamics and Differential Equations,  (2024), pp.~1--36.
+
+\bibitem{billingsley2013convergence}
+{\sc P.~Billingsley}, {\em Convergence of probability measures}, John Wiley \& Sons, 2013.
+
+\bibitem{borgs2019}
+{\sc C.~Borgs, J.~Chayes, H.~Cohn, and Y.~Zhao}, {\em An theory of sparse graph convergence i: Limits, sparse random graph models, and power law distributions}, Transactions of the American Mathematical Society, 372 (2019), pp.~3019--3062.
+
+\bibitem{bramburger2023pattern}
+{\sc J.~Bramburger and M.~Holzer}, {\em Pattern formation in random networks using graphons}, SIAM Journal on Mathematical Analysis, 55 (2023), pp.~2150--2185.
+
+\bibitem{braunsteins2023sample}
+{\sc P.~Braunsteins, F.~den Hollander, M.~Mandjes, et~al.}, {\em A sample-path large deviation principle for dynamic erd{\H{o}}s--r{\'e}nyi random graphs}, The Annals of Applied Probability, 33 (2023).
+
+\bibitem{breakspear2017dynamic}
+{\sc M.~Breakspear}, {\em Dynamic models of large-scale brain activity}, Nature neuroscience, 20 (2017), pp.~340--352.
+
+\bibitem{bressloff2011spatiotemporal}
+{\sc P.~C. Bressloff}, {\em Spatiotemporal dynamics of continuum neural fields}, Journal of Physics A: Mathematical and Theoretical, 45 (2011), p.~033001.
+
+\bibitem{bressloffWavesNeuralMedia2014}
+{\sc P.~C. Bressloff}, {\em Waves in {{Neural Media}}}, Lecture {{Notes}} on {{Mathematical Modelling}} in the {{Life Sciences}}, Springer New York, New York, NY, 2014, \url{https://doi.org/10.1007/978-1-4614-8866-8}.
+
+\bibitem{bressloff2014path}
+{\sc P.~C. Bressloff and J.~M. Newby}, {\em Path integrals and large deviations in stochastic hybrid systems}, Physical Review E, 89 (2014), p.~042701.
+
+\bibitem{Budhiraja2019}
+{\sc A.~Budhiraja and P.~Dupuis}, {\em Analysis and Approximation of Rare Events}, vol.~94, Springer, 2019, \url{http://link.springer.com/10.1007/978-1-4939-9579-0}.
+
+\bibitem{carrillo2023noise}
+{\sc J.~A. Carrillo, P.~Roux, and S.~Solem}, {\em Noise-driven bifurcations in a nonlinear fokker--planck system describing stochastic neural fields}, Physica D: Nonlinear Phenomena, 449 (2023), p.~133736.
+
+\bibitem{carrillo2023well}
+{\sc J.~A. Carrillo, P.~Roux, and S.~Solem}, {\em Well-posedness and stability of a stochastic neural field in the form of a partial differential equation}, arXiv preprint arXiv:2307.08077,  (2023).
+
+\bibitem{chevallier2019mean}
+{\sc J.~Chevallier, A.~Duarte, E.~L{\"o}cherbach, and G.~Ost}, {\em Mean field limits for nonlinear spatially extended hawkes processes with exponential memory kernels}, Stochastic Processes and their Applications, 129 (2019), pp.~1--27.
+
+\bibitem{cook2022neural}
+{\sc B.~J. Cook, A.~D. Peterson, W.~Woldman, and J.~R. Terry}, {\em Neural field models: A mathematical overview and unifying framework}, Mathematical Neuroscience and Applications, 2 (2022).
+
+\bibitem{coombesNeuralFields2014}
+{\sc S.~Coombes, P.~{beim Graben}, R.~Potthast, and J.~Wright}, eds., {\em Neural {{Fields}}}, Springer Berlin Heidelberg, Berlin, Heidelberg, 2014, \url{https://doi.org/10.1007/978-3-642-54593-1}.
+
+\bibitem{coombesNeurodynamicsAppliedMathematics2023}
+{\sc S.~Coombes and K.~C.~A. Wedgwood}, {\em Neurodynamics: {{An Applied Mathematics Perspective}}}, vol.~75 of Texts in {{Applied Mathematics}}, Springer International Publishing, Cham, 2023, \url{https://doi.org/10.1007/978-3-031-21916-0}.
+
+\bibitem{coppini2022long}
+{\sc F.~Coppini}, {\em Long time dynamics for interacting oscillators on graphs}, The Annals of Applied Probability, 32 (2022), pp.~360--391.
+
+\bibitem{coppini2023central}
+{\sc F.~Coppini, E.~Lu{\c{c}}on, and C.~Poquet}, {\em Central limit theorems for global and local empirical measures of diffusions on erd{\H{o}}s-r{\'e}nyi graphs}, Electronic Journal of Probability, 28 (2023), pp.~1--63.
+
+\bibitem{deco2017dynamics}
+{\sc G.~Deco, M.~L. Kringelbach, V.~K. Jirsa, and P.~Ritter}, {\em The dynamics of resting fluctuations in the brain: metastability and its dynamical cortical core}, Scientific reports, 7 (2017), p.~3095.
+
+\bibitem{delattre2016note}
+{\sc S.~Delattre, G.~Giacomin, and E.~Lu{\c{c}}on}, {\em A note on dynamical models on random graphs and fokker--planck equations}, Journal of Statistical Physics, 165 (2016), pp.~785--798.
+
+\bibitem{Delattre2016}
+{\sc S.~Delattre, G.~Giacomin, and E.~Luçon}, {\em A note on dynamical models on random graphs and fokker-planck equations}, Journal of Statistical Physics, 165 (2016), pp.~785--798, \url{https://doi.org/10.1007/s10955-016-1652-3}.
+
+\bibitem{delgadino2021diffusive}
+{\sc M.~G. Delgadino, R.~S. Gvalani, and G.~A. Pavliotis}, {\em On the diffusive-mean field limit for weakly interacting diffusions exhibiting phase transitions}, Archive for Rational Mechanics and Analysis, 241 (2021), pp.~91--148.
+
+\bibitem{Dembo1998}
+{\sc A.~Dembo and O.~Zeitouni}, {\em Large deviations techniques and applications}, Springer, 2009.
+
+\bibitem{engel2000a}
+{\sc K.-J. Engel and R.~Nagel}, {\em One-Parameter Semigroups for Linear Evolution Equations}, no.~194 in Graduate Texts in Mathematics, Springer, New York, 2000.
+
+\bibitem{ermentroutSpatiotemporalPatternFormation2014}
+{\sc G.~B. Ermentrout, S.~E. Folias, and Z.~P. Kilpatrick}, {\em Spatiotemporal {{Pattern Formation}} in {{Neural Fields}} with {{Linear Adaptation}}}, in Neural {{Fields}}, S.~Coombes, P.~{beim Graben}, R.~Potthast, and J.~Wright, eds., Springer Berlin Heidelberg, Berlin, Heidelberg, 2014, pp.~119--151, \url{https://doi.org/10.1007/978-3-642-54593-1_4}.
+
+\bibitem{ermentroutMathematicalFoundationsNeuroscience2010}
+{\sc G.~B. Ermentrout and D.~H. Terman}, {\em Mathematical {{Foundations}} of {{Neuroscience}}}, vol.~35 of Interdisciplinary {{Applied Mathematics}}, Springer New York, New York, NY, 2010, \url{https://doi.org/10.1007/978-0-387-87708-2}.
+
+\bibitem{forgoston2018primer}
+{\sc E.~Forgoston and R.~O. Moore}, {\em A primer on noise-induced transitions in applied dynamical systems}, SIAM Review, 60 (2018), pp.~969--1009.
+
+\bibitem{graham1997stochastic}
+{\sc C.~Graham and S.~M{\'e}l{\'e}ard}, {\em Stochastic particle approximations for generalized boltzmann models and convergence estimates}, The Annals of probability, 25 (1997), pp.~115--132.
+
+\bibitem{huangSpiralWavesDisinhibited2004a}
+{\sc X.~Huang, W.~C. Troy, Q.~Yang, H.~Ma, C.~R. Laing, S.~J. Schiff, and J.-Y. Wu}, {\em Spiral {{Waves}} in {{Disinhibited Mammalian Neocortex}}}, The Journal of Neuroscience, 24 (2004), pp.~9897--9902, \url{https://doi.org/10.1523/JNEUROSCI.2705-04.2004}.
+
+\bibitem{karatzasBrownianMotionStochastic1998}
+{\sc I.~Karatzas and S.~E. Shreve}, {\em Brownian {{Motion}} and {{Stochastic Calculus}}}, vol.~113 of Graduate {{Texts}} in {{Mathematics}}, Springer, New York, NY, 1998, \url{https://doi.org/10.1007/978-1-4612-0949-2}.
+
+\bibitem{keener2011perturbation}
+{\sc J.~P. Keener and J.~M. Newby}, {\em Perturbation analysis of spontaneous action potential initiation by stochastic ion channels}, Physical Review E—Statistical, Nonlinear, and Soft Matter Physics, 84 (2011), p.~011918.
+
+\bibitem{krauseIntroductionRecentProgress2021}
+{\sc A.~L. Krause, E.~A. Gaffney, P.~K. Maini, and V.~Klika}, {\em Introduction to `{{Recent}} progress and open frontiers in {{Turing}}'s theory of morphogenesis'}, Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 379 (2021), p.~20200280, \url{https://doi.org/10.1098/rsta.2020.0280}.
+
+\bibitem{krauseModernPerspectivesNearequilibrium2021}
+{\sc A.~L. Krause, E.~A. Gaffney, P.~K. Maini, and V.~Klika}, {\em Modern perspectives on near-equilibrium analysis of {{Turing}} systems}, Philosophical Transactions of the Royal Society A: Mathematical, Physical and Engineering Sciences, 379 (2021), p.~20200268, \url{https://doi.org/10.1098/rsta.2020.0268}.
+
+\bibitem{laingSpiralWavesNonlocal2005}
+{\sc C.~R. Laing}, {\em Spiral {{Waves}} in {{Nonlocal Equations}}}, SIAM Journal on Applied Dynamical Systems, 4 (2005), pp.~588--606, \url{https://doi.org/10.1137/040612890}.
+
+\bibitem{laingMultipleBumpsNeuronal2002}
+{\sc C.~R. Laing, W.~C. Troy, B.~Gutkin, and G.~B. Ermentrout}, {\em Multiple {{Bumps}} in a {{Neuronal Model}} of {{Working Memory}}}, SIAM Journal on Applied Mathematics, 63 (2002), pp.~62--97, \url{https://doi.org/10.1137/S0036139901389495}.
+
+\bibitem{le2016brownian}
+{\sc J.-F. Le~Gall}, {\em Brownian motion, martingales, and stochastic calculus}, Springer, 2016.
+
+\bibitem{lindner2004effects}
+{\sc B.~Lindner, J.~Garc{\i}a-Ojalvo, A.~Neiman, and L.~Schimansky-Geier}, {\em Effects of noise in excitable systems}, Physics reports, 392 (2004), pp.~321--424.
+
+\bibitem{Lucon2020Quenched}
+{\sc E.~Lucon}, {\em Quenched asymptotics for interacting diffusions on inhomogeneous random graphs}, Stochastic Processes and their Applications,  (2020), pp.~1--52, \url{http://arxiv.org/abs/1811.09229}.
+
+\bibitem{luccon2020emergence}
+{\sc E.~Lu{\c{c}}on and C.~Poquet}, {\em Emergence of oscillatory behaviors for excitable systems with noise and mean-field interaction: a slow-fast dynamics approach}, Communications in Mathematical Physics, 373 (2020), pp.~907--969.
+
+\bibitem{luccon2021periodicity}
+{\sc E.~Lu{\c{c}}on and C.~Poquet}, {\em Periodicity induced by noise and interaction in the kinetic mean-field fitzhugh--nagumo model}, Electronic Journal of Probability,  (2021).
+
+\bibitem{luccon2024existence}
+{\sc E.~Lu{\c{c}}on and C.~Poquet}, {\em Existence, stability and regularity of periodic solutions for nonlinear fokker--planck equations}, Journal of Dynamics and Differential Equations, 36 (2024), pp.~633--671.
+
+\bibitem{maclaurin2024large}
+{\sc J.~MacLaurin}, {\em Large deviations of a network of interacting particles with sparse random connections}, arXiv preprint arXiv:1607.05471.
+
+\bibitem{maclaurin2023phase}
+{\sc J.~MacLaurin}, {\em Phase reduction of waves, patterns, and oscillations subject to spatially extended noise}, SIAM Journal on Applied Mathematics, 83 (2023), pp.~1215--1244.
+
+\bibitem{maclaurin2020wandering}
+{\sc J.~N. MacLaurin and P.~C. Bressloff}, {\em Wandering bumps in a stochastic neural field: A variational approach}, Physica D: Nonlinear Phenomena, 406 (2020), p.~132403.
+
+\bibitem{maini2012turing}
+{\sc P.~K. Maini, T.~E. Woolley, R.~E. Baker, E.~A. Gaffney, and S.~S. Lee}, {\em Turing's model for biological pattern formation and the robustness problem}, Interface focus, 2 (2012), pp.~487--496.
+
+\bibitem{mckane2014stochastic}
+{\sc A.~J. McKane, T.~Biancalani, and T.~Rogers}, {\em Stochastic pattern formation and spontaneous polarisation: the linear noise approximation and beyond}, Bulletin of mathematical biology, 76 (2014), pp.~895--921.
+
+\bibitem{mckean1956elementary}
+{\sc H.~P. McKean}, {\em Elementary solutions for certain parabolic partial differential equations}, Transactions of the American Mathematical Society, 82 (1956), pp.~519--548.
+
+\bibitem{moreno2007noise}
+{\sc R.~Moreno-Bote, J.~Rinzel, and N.~Rubin}, {\em Noise-induced alternations in an attractor network model of perceptual bistability}, Journal of neurophysiology, 98 (2007), pp.~1125--1139.
+
+\bibitem{morters2010brownian}
+{\sc P.~M{\"o}rters and Y.~Peres}, {\em Brownian motion}, vol.~30, Cambridge University Press, 2010.
+
+\bibitem{newby2014spontaneous}
+{\sc J.~M. Newby}, {\em Spontaneous excitability in the morris--lecar model with ion channel noise}, SIAM Journal on Applied Dynamical Systems, 13 (2014), pp.~1756--1791.
+
+\bibitem{newby2013breakdown}
+{\sc J.~M. Newby, P.~C. Bressloff, and J.~P. Keener}, {\em Breakdown of fast-slow analysis in an excitable system with channel noise}, Physical review letters, 111 (2013), p.~128101.
+
+\bibitem{oliveira2019interacting}
+{\sc R.~I. Oliveira and G.~H. Reis}, {\em Interacting diffusions on random graphs with diverging average degrees: Hydrodynamics and large deviations}, Journal of Statistical Physics, 176 (2019), pp.~1057--1087.
+
+\bibitem{Othmer1971}
+{\sc H.~Othmer and L.~Scriven}, {\em Instability and dynamic pattern in cellular networks}, Journal of Theoretical Biology, 32 (1971).
+
+\bibitem{Othmer1974}
+{\sc H.~Othmer and L.~Scriven}, {\em Non-linear aspects of dynamic pattern in cellular networks}, Journal of Theoretical Biology, 43 (1974).
+
+\bibitem{rankinContinuationLocalisedCoherent2014}
+{\sc J.~Rankin, D.~Avitabile, J.~Baladron, G.~Faye, and D.~J.~B. Lloyd}, {\em Continuation of localised coherent structures in nonlocal neural field equations}, SIAM Journal on Scientific Computing, 36 (2014), pp.~B70--B93, \url{https://doi.org/10.1137/130918721}, \url{https://arxiv.org/abs/1304.7206}.
+
+\bibitem{scheutzow1985noise}
+{\sc M.~Scheutzow}, {\em Noise can create periodic behavior and stabilize nonlinear diffusions}, Stochastic processes and their applications, 20 (1985), pp.~323--331.
+
+\bibitem{shu2003turning}
+{\sc Y.~Shu, A.~Hasenstaub, and D.~A. McCormick}, {\em Turning on and off recurrent balanced cortical activity}, Nature, 423 (2003), pp.~288--293.
+
+\bibitem{sznitman1991topics}
+{\sc A.-S. Sznitman}, {\em Topics in propagation of chaos}, Ecole d’{\'e}t{\'e} de probabilit{\'e}s de Saint-Flour XIX—1989, 1464 (1991), pp.~165--251.
+
+\bibitem{tanaka1984limit}
+{\sc H.~Tanaka}, {\em Limit theorems for certain diffusion processes with interaction}, in North-Holland Mathematical Library, vol.~32, Elsevier, 1984, pp.~469--488.
+
+\bibitem{TOUBOUL20121223}
+{\sc J.~Touboul}, {\em Mean-field equations for stochastic firing-rate neural fields with delays: Derivation and noise-induced transitions}, Physica D: Nonlinear Phenomena, 241 (2012), pp.~1223--1244, \url{https://doi.org/https://doi.org/10.1016/j.physd.2012.03.010}, \url{https://www.sciencedirect.com/science/article/pii/S0167278912000942}.
+
+\bibitem{touboul2014spatially}
+{\sc J.~Touboul}, {\em Spatially extended networks with singular multi-scale connectivity patterns}, Journal of Statistical Physics, 156 (2014), pp.~546--573.
+
+\bibitem{touboulNoiseInducedBehaviorsNeural2012a}
+{\sc J.~Touboul, G.~Hermann, and O.~Faugeras}, {\em Noise-{{Induced Behaviors}} in {{Neural Mean Field Dynamics}}}, SIAM Journal on Applied Dynamical Systems, 11 (2012), pp.~49--81, \url{https://doi.org/10.1137/110832392}.
+
+\bibitem{Turing1952}
+{\sc A.~M. Turing}, {\em The chemical basis of morphogenesis}, Philosophical Transactions of the Royal Society of London. Series B, Biological Sciences, 237 (1952), pp.~37--72, \url{https://doi.org/10.1098/rstb.1952.0012}.
+
+\bibitem{van1994noise}
+{\sc C.~Van~den Broeck, J.~Parrondo, and R.~Toral}, {\em Noise-induced nonequilibrium phase transition}, Physical review letters, 73 (1994), p.~3395.
+
+\bibitem{Remco2024}
+{\sc R.~van~der Hofstad}, {\em Random Graphs and Complex Networks Vol II}, Cambridge University Press, 2024.
+
+\bibitem{wang2010neurophysiological}
+{\sc X.-J. Wang}, {\em Neurophysiological and computational principles of cortical rhythms in cognition}, Physiological reviews, 90 (2010), pp.~1195--1268.
+
+\bibitem{wilsonExcitatoryInhibitoryInteractions1972}
+{\sc H.~R. Wilson and J.~D. Cowan}, {\em Excitatory and {{Inhibitory Interactions}} in {{Localized Populations}} of {{Model Neurons}}}, Biophysical Journal, 12 (1972), pp.~1--24, \url{https://doi.org/10.1016/S0006-3495(72)86068-5}.
+
+\bibitem{zhou2001array}
+{\sc C.~Zhou, J.~Kurths, and B.~Hu}, {\em Array-enhanced coherence resonance: nontrivial effects of heterogeneity and spatial independence of noise}, Physical review letters, 87 (2001), p.~098101.
+
+\end{thebibliography}

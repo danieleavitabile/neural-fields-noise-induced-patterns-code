@@ -1,0 +1,971 @@
+ \documentclass[a4paper]{siamart251104}
+
+% Daniele's macros
+\usepackage{damacros}
+\usepackage{xr}
+\externaldocument[man-]{manuscript}
+% James's macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def \R{\mathbb R}
+\def \N{\mathbb N}
+\def \P{\mathbb P}
+\def \E{\mathbb E}
+\newcommand{\mE}[1]{\mathbb{E}\left[\, #1 \,\right]}
+\newcommand{\Z}{\mathbb{Z}}
+
+\DeclareMathOperator{\var}{var}
+\DeclareMathOperator{\cov}{cov}
+\DeclareMathOperator{\bP}{\mathbf{P}}
+\DeclareMathOperator{\bE}{\mathbf{E}}
+\DeclareMathOperator{\sign}{\mathrm{sign}}
+
+\newcommand{\ind}{\mathbf{1}}
+\newcommand{\Ind}{{\rm{\textbf{1}}}}
+\newcommand{\norm}[1]{\left \| #1 \right \|}
+\newcommand{\epsi}{\varepsilon}
+
+\newcommand{\cA}{{\ensuremath{\mathcal A}} }
+\newcommand{\cF}{{\ensuremath{\mathcal F}} }
+\newcommand{\cG}{{\ensuremath{\mathcal G}} }
+\newcommand{\cP}{{\ensuremath{\mathcal P}} }
+\newcommand{\cE}{{\ensuremath{\mathcal E}} }
+\newcommand{\cH}{{\ensuremath{\mathcal H}} }
+\newcommand{\cI}{{\ensuremath{\mathcal I}} }
+\newcommand{\cK}{{\ensuremath{\mathcal K}} }
+\newcommand{\cC}{{\ensuremath{\mathcal C}} }
+\newcommand{\cN}{{\ensuremath{\mathcal N}} }
+\newcommand{\cL}{{\ensuremath{\mathcal L}} }
+\newcommand{\cT}{{\ensuremath{\mathcal T}} }
+\newcommand{\cD}{{\ensuremath{\mathcal D}} }
+\newcommand{\cB}{{\ensuremath{\mathcal B}} }
+\newcommand{\cO}{{\ensuremath{\mathcal O}} }
+\newcommand{\cS}{{\ensuremath{\mathcal S}} }
+\newcommand{\cW}{{\ensuremath{\mathcal W}} }
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newcommand{\qed}{\hfill $\quad \Box$ \bigskip}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Blackboard bolds
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bbA}{{\ensuremath{\mathbb A}} }
+\newcommand{\bbB}{{\ensuremath{\mathbb B}} }
+\newcommand{\bbC}{{\ensuremath{\mathbb C}} }
+\newcommand{\bbD}{{\ensuremath{\mathbb D}} }
+\newcommand{\bbE}{{\ensuremath{\mathbb E}} }
+\newcommand{\bbF}{{\ensuremath{\mathbb F}} }
+\newcommand{\bbG}{{\ensuremath{\mathbb G}} }
+\newcommand{\bbH}{{\ensuremath{\mathbb H}} }
+\newcommand{\bbI}{{\ensuremath{\mathbb I}} }
+\newcommand{\bbJ}{{\ensuremath{\mathbb J}} }
+\newcommand{\bbK}{{\ensuremath{\mathbb K}} }
+\newcommand{\bbL}{{\ensuremath{\mathbb L}} }
+\newcommand{\bbM}{{\ensuremath{\mathbb M}} }
+\newcommand{\bbN}{{\ensuremath{\mathbb N}} }
+\newcommand{\bbO}{{\ensuremath{\mathbb O}} }
+\newcommand{\bbP}{{\ensuremath{\mathbb P}} }
+\newcommand{\bbq}{{\ensuremath{\mathbb q}} }
+\newcommand{\bbR}{{\ensuremath{\mathbb R}} }
+\newcommand{\bbS}{{\ensuremath{\mathbb S}} }
+\newcommand{\bbT}{{\ensuremath{\mathbb T}} }
+\newcommand{\bbU}{{\ensuremath{\mathbb U}} }
+\newcommand{\bbV}{{\ensuremath{\mathbb V}} }
+\newcommand{\bbW}{{\ensuremath{\mathbb W}} }
+\newcommand{\bbX}{{\ensuremath{\mathbb X}} }
+\newcommand{\bbY}{{\ensuremath{\mathbb Y}} }
+\newcommand{\bbZ}{{\ensuremath{\mathbb Z}} }
+\newcommand{\one}{{\ensuremath{\mathbbm{1}}}}
+\newcommand{\linf}[1]{\underset{#1\to\infty}{\underline{\lim}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Greek letters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ga}{\alpha}
+\newcommand{\gb}{\beta}
+\newcommand{\gga}{\gamma}            % \gg already exists...
+\newcommand{\gd}{\delta}
+\newcommand{\gep}{\varepsilon}       % \ge already exists...
+\newcommand{\gp}{\varphi}
+\newcommand{\gr}{\rho}
+\newcommand{\gvr}{\varrho}
+\newcommand{\gz}{\zeta}
+\newcommand{\gG}{\Gamma}
+\newcommand{\gP}{\Phi}
+\newcommand{\gD}{\Delta}
+\newcommand{\gk}{\kappa}
+\newcommand{\go}{\omega}
+\newcommand{\gO}{\Omega}
+\newcommand{\gl}{\lambda}
+\newcommand{\gL}{\Lambda}
+\newcommand{\gs}{\sigma}
+\newcommand{\gS}{\Sigma}
+\newcommand{\gt}{\vartheta}
+
+\newcommand{\tl}{\underline{t}}
+\newcommand{\tb}{\bar{t}}
+\newcommand{\balpha}{\boldsymbol\alpha}
+\newcommand{\bbeta}{\boldsymbol\beta}
+\newcommand{\bphi}{\boldsymbol\phi}
+\newcommand{\bupsilon}{\boldsymbol\upsilon}
+\newcommand{\bgamma}{\boldsymbol\gamma}
+
+\newcommand{\lsup}[1]{\underset{#1\to\infty}{\overline{\lim}}}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\graphicspath{{./Figures/}}
+
+\newcommand{\rev}[1]{{\color{magenta} #1}} 
+
+% Sets running headers as well as PDF title and authors
+\title{Supplementary Materials for Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks}
+
+% Authors: full names plus addresses.
+\author{%
+  Daniele Avitabile%
+  \thanks{%
+    Amsterdam Centre for Dynamics and Computation,
+    Vrije Universiteit Amsterdam,
+    Department of Mathematics,
+    Faculteit der Exacte Wetenschappen,
+    De Boelelaan 1081a,
+    1081 HV Amsterdam, The Netherlands.
+  \protect
+    MathNeuro Team,
+    Inria branch of the University of Montpellier,
+    860 rue Saint-Priest
+    34095 Montpellier Cedex 5
+    France.
+  \protect
+  (\email{d.avitabile@vu.nl}, \url{www.danieleavitabile.com}, \url{www.amsterdam-dynamics.nl}).
+  }
+  \and
+  James MacLaurin
+  \thanks{Department of Mathematical Sciences. 
+    New Jersey Institute of Technology, \email{james.n.maclaurin@njit.edu}
+  }
+}
+\begin{document}
+\maketitle
+ 
+ In the Supplementary Materials we prove some additional results, and include further
+ numerical simulations. Recall the $n$-dimensional system with averaged
+connectivity,
+\begin{equation} \label{eq: v processes supplementary}
+  \begin{aligned}
+    & dv^j_{\alpha,t} = \bigg( - \sum_{\beta =1}^{q}  L_{\alpha\beta} v^j_{\beta,t} 
+    &\begin{aligned}[t]
+      &+ n^{-1} \sum_{k=1}^n \sum_{\beta =1}^{q} 
+        \mathcal{K}_{\alpha\beta}(x_n^j,x_n^k) f_{\beta}( v^k_t) 
+      + I_{\alpha,t}(x_n^j) \bigg) dt \\
+      &+ \sum_{\beta = 1}^qG_{\alpha\beta,t}(x_n^j) dW^j_{\beta,t}, 
+      \end{aligned}\\
+    & v^i_\alpha  = z_\alpha^i
+  \end{aligned}
+\end{equation}
+which shares with the original particle system identical Brownian
+motions and initial conditions. Our first result concerns the push-forward function $\Phi_T$ referred to in Section 6.%\ref{subsection approximate heterogeneous averaged}.
+
+
+\section{Transformation of the Uncoupled System to the Coupled System}
+\label{Section Transformation}
+
+Consider the empirical measure generated by \cref{eq: v processes supplementary}, that is, the
+particle system with average coupling
+\[
+  \grave{\mu}^n_T = n^{-1}\sum_{j=1}^n \delta_{x^j_n , v^j} .
+\]
+Our first main aim is to prove Lemma 6.2. We must thus find a continuous mapping $\Phi_T: X_T \to Y_T$,  such that $\grave{\mu}^n_T =
+\Phi_T\big( \tilde{\mu}^n_T \big)$ identically, with $\tilde \mu^n_T$ given by
+\begin{equation}\label{eq:muTildeDefSupp}
+  % \tilde{\mu}^n_T = n^{-1} \sum_{j=1}^n\delta_{x_j , u^j_0, \tilde{W}^j_{[0,T]} } .
+  \tilde{\mu}^n_T = n^{-1} \sum_{j \in \NSet_n} \delta_{b^j}
+  \quad 
+  b^j = \bigl(x_n^j,u_0^j,\{ \tilde W^j_{t} \colon t \in [0,T] \}\bigr),
+  \quad
+  \tilde W^j_{\alpha,t} = \sum_{\beta=1}^q \int_0^t G_{\alpha\beta,s}(x_n^j) dW_{\beta,s}^j
+\end{equation}
+
+ This allows us to `push-forward'
+the Large Deviations Principle for the uncoupled system (as noted in 
+Section 6.1 of the main paper) to obtain a Large Deviations
+Principle for the coupled system. To the knowledge of these authors, the first
+scholar to apply this technique to the Large Deviations of interacting particle
+systems was Tanaka \cite{tanaka1984limit}. One of these authors has used this
+technique to determine the Large Deviations of a spatially-distributed network of
+interacting neurons in \cite{maclaurin2024large}.
+
+The mapping $\Phi_T$ is defined in two steps, using an intermediate mapping $\psi_T$
+that we are now going to discuss. The mapping $\psi_T$ can be thought of as as
+transforming the characteristics of the noise empirical measure $\tilde{\mu}^n_T$ to
+the characteristics of $\grave{\mu}^n_T$. %Because the firing rate function is not necessarily bounded, in order that we may control the continuity we work on subsets with bounded square norm expectation.%we start by applying a transformation that assumes that $f$ is upperbounded (continuity with respect to the weak convergence is only with respect to bounded functions).  %\da[]{of the noise of $\grave \mu$?}
+
+%Define, for $a \geq 0$,
+%\begin{align}
+%Y_{T,a} =& \big\lbrace\mu \in Y_T : \sup_{t\in [0,T]} \mathbb{E}^{\mu} \big[ \| f(v_t) \|^2 \big] \leq a \big\rbrace \\
+%Y_T^* =& \bigcup_{a\geq 0} Y_{T,a}.
+%\end{align}
+Define
+\[
+   \begin{aligned}
+     \psi_T : Y_T \times D \times \mathbb{R}^q \times C\big( [ 0,T], \mathbb{R}^q \big) 
+       & \to  D \times C\big( [ 0,T], \mathbb{R}^q \big) \\
+       (\nu,x,z,w) 
+       & \mapsto (x,v),
+   \end{aligned}
+\]
+where $v \in  C\big( [ 0,T], \mathbb{R}^q \big)$ is defined to be such that for all
+$(\alpha,t) \in \NSet_q  \times  [0,T]$
+\[
+  v_{\alpha,t} = z_{\alpha} + \int_0^t  \bigg( - 
+    \sum_{\beta \in \NSet_q}  L_{\alpha\beta} v_{\beta,s} 
+  + \sum_{\beta \in \NSet_q} \mathbb{E}^{(y,u)\sim \nu}\big[ \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_s) \big]+ I_{\alpha}(s,x) \bigg) ds + w_{\alpha,t}.
+\]
+%For $l > 0$, define
+%\begin{equation}
+%f^{(l)}_{\alpha}(v) = \left\lbrace \begin{array}{ll}
+%f_{\alpha}(v) & \text{ in the case that }| f_{\alpha}(v) | \leq l \\
+%l & \text{ in the case that }f_{\alpha}(v) > l \\
+%-l & \text{ in the case that }f_{\alpha}(v) < -l
+%\end{array}\right.
+%\end{equation}
+%We can analogously define the function
+%\[
+%   \begin{aligned}
+%     \psi^{(l)}_T : Y_T \times D \times \mathbb{R}^q \times C\big( [ 0,T], \mathbb{R}^q \big) 
+%       & \to  D \times C\big( [ 0,T], \mathbb{R}^q \big) \\
+%       (\nu,x,z,w) 
+%       & \mapsto (x,v),
+%   \end{aligned}
+%\]
+%where $\tilde{v} \in  C\big( [ 0,T], \mathbb{R}^q \big)$ is defined to be such that for all
+%$(\alpha,t) \in \NSet_q  \times  [0,T]$
+%\[
+%  \tilde{v}_{\alpha,t} = z_{\alpha} + \int_0^t  \bigg( - 
+%    \sum_{\beta \in \NSet_q}  L_{\alpha\beta} \tilde{v}_{\beta,s} 
+%  + \sum_{\beta \in \NSet_q} \mathbb{E}^{(y,u)\sim \nu}\big[ \mathcal{K}_{\alpha\beta}(x,y) f^{(l)}_{\beta}(u_s) \big]+ I_{\alpha}(s,x) \bigg) ds + w_{\alpha,t}.
+%\]
+%\jm[]{$q_s$ is bad notation here, because $q$ is the index for the neurons}
+%In the case that the following limit exists, define
+%\begin{equation}
+% \psi_T = \lim_{l\to\infty} \psi_T^{(l)} .
+%\end{equation}
+%\begin{align}
+ %Y_{T,c} \times D \times \mathbb{R}^q \times C\big( [ 0,T], \mathbb{R}^q \big) \text{ where }\\
+ %Y_{T,c} = \big\lbrace \mu \in Y_T \; : \; \sup_{t\in [0,T]}\mathbb{E}^{\mu}\big[ \| v_t \|^2 \big] \leq c \big\rbrace
+%\end{align}
+ \begin{lemma}
+The transformation $\psi_T $ is well-defined. Furthermore $\psi_T$ is continuous.
+\end{lemma}
+\begin{proof}
+%We only prove that $\psi_T$ is well-defined and continuous; the proofs for $\psi_T^{(l)}$ are similar and easier because $f^{(l)}$ is bounded.
+
+  To prove well-definedness, fix $(\nu,x,z, w) \in Y_{T} \times D \times \mathbb{R}^q
+  \times C( [ 0,T], \mathbb{R}^q)$, and consider the map $\Lambda \colon C( [ 0,T],
+  \mathbb{R}^q ) \to C( [ 0,T],
+  \mathbb{R}^q )$ defined by
+\begin{multline*}
+  \Lambda(r)_{\alpha,t} := z_{\alpha} +  \int_0^t  \bigg( - \sum_{\beta \in \NSet_q}
+  L_{\alpha\beta} r_{\beta,s} + \sum_{\beta \in  \in \NSet_q} \int \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_s)\nu(dy,du) \\ 
++ I_{\alpha}(s,x) \bigg) ds + w_{\alpha,t}.
+\end{multline*}
+We claim that $\Lambda$ has a unique fixed point $v$. If this holds, then the fixed
+point $v$
+satisfies $\psi_T(\nu,x,z,w) = (x,v)$, which means $\psi_T$ is a
+well-defined operator on $ Y_T \times D \times \mathbb{R}^q \times C( [ 0,T],
+\mathbb{R}^q)$ to $\RSet^q  \times C([0,T],\RSet^q)$.
+To prove that $\Lambda$ has a unique fixed point, we introduce the norm 
+\[
+  \| v \|_{\rho} = \sup_{t \in [0,T]} e^{-\rho t} \| v_t \|_{\RSet^q},
+\]
+which is equivalent to $\| \blank \|_{T}$ on $C([0,T],\RSet^q)$ for any
+$\rho >0$, because $e^{-\rho T}\| v \|_T  \leq \| v \|_{\rho}  \leq \| v \|_{T}$. We
+prove that $\Lambda$ is a contraction on
+$( C( [ 0,\tau], \mathbb{R}^q), \| \blank \|_\rho )$, and hence on
+$( C( [ 0,\tau], \mathbb{R}^q), \| \blank \|_T )$, for any $\rho > \| L \|$ where
+the latter is the operator norm of $L$, seen as an operator on $\RSet^q$ to $\RSet^q$. For any
+$p,r \in ( C( [ 0,\tau], \mathbb{R}^q ), \| \blank \|_\rho )$, we estimate 
+\[
+  \begin{aligned}
+    \| \Lambda(r) - \Lambda(p)\|_\rho  
+    & \leq \sup_{t \in [0,T]} e^{-\rho t} \int_{0}^{t} e^{\rho s} 
+      \| e^{-\rho s} L(r_s - p_s) \|_{\RSet^q}\,d s \\
+    & \leq \| L \| \; \| r - p \|_{\rho} \sup_{t \in [0,T]} e^{-\rho t}  
+      \int_{0}^{t} e^{\rho s}\,d s \\
+    & = \| L \| \; \| r - p \|_{\rho} \sup_{t \in [0,T]} \frac{1-e^{-\rho t}}{\rho}
+     \leq  \frac{\| L \|}{\rho} \| r - p \|_{\rho}
+  \end{aligned}
+\]
+which proves that $\Lambda$ is a contraction on $( C( [ 0,T], \mathbb{R}^q), \|
+\blank \|_\rho )$, for any $\rho > \|  L \|$. This proves $\Lambda$ has a unique
+fixed point in $( C( [ 0,T], \mathbb{R}^q ), \| \blank \|_T)$.
+
+Notice that the function $(y,v) \to \mathcal{K}_{\alpha\beta}(x,y)f_{\beta}(v)$
+is Lipschitz and bounded, for all $x \in D$. We thus find that there must exist a universal constant $C_2$ such that for all 
+$\mu,\tilde{\mu} \in Y_{t}$, for any $x\in D$,
+\begin{multline}\label{eq: Lipschitz convolution}
+\bigg| \int_0^t\sum_{\beta \in \NSet^q} \int \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_s)\mu(dy,du) - \\ \int_0^t\sum_{\beta \in \NSet^q} \int \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_s)\tilde{\mu}(dy,du) \bigg|   \leq C_2 d_{Y_t}(\mu,\tilde{\mu})
+\end{multline}
+Since the drift term in is uniformly Lipschitz in $v$, standard techniques imply that $\psi_T$ is continuous.
+%The next step is to prove that we can take $l\to\infty$ as long as $\mu \in Y_{T,c}$. Now the Lipschitz assumption on $f$ implies that there must exist a constant $C$ such that
+%\[
+%\sup_{1\leq \alpha \leq q} \big| f_{\alpha}(v) \big| \leq C + C \| v \|.
+%\]
+%We next claim that for all $1\leq \alpha,\beta \leq q$,
+%\begin{align}
+%\lim_{l\to \infty}\sup_{\mu \in Y_{T,c}} \sup_{t\in [0,T]} \bigg|   \mathbb{E}^{\mu}\big[  \mathcal{K}_{\alpha\beta}(x,y)f^{(l)}_{\beta}(v_t) - \mathcal{K}_{\alpha\beta}(x,y)f_{\beta}(v_t) \big] \bigg| = 0. \label{eq: uniformly integrable Y T c}
+%\end{align}
+%In fact \eqref{eq: uniformly integrable Y T c} follows from the fact that for any $\mu \in  Y_{T,c}$ and any $t\in [0,T]$,
+%\begin{align}
+% \big| \mathbb{E}^{\mu}\big[ v_{\alpha,t} \chi\lbrace v_{\alpha,t} \geq l \rbrace \big] \big| &\leq cl^{-1} \label{eq: simple uniformly integrable 1} \\
+% \big| \mathbb{E}^{\mu}\big[ v_{\alpha,t} \chi\lbrace v_{\alpha,t} \leq -l \rbrace \big] \big|  &\leq cl^{-1} .\label{eq: simple uniformly integrable 2}
+%\end{align}
+%(If \eqref{eq: simple uniformly integrable 1} and \eqref{eq: simple uniformly integrable 2} did not hold, we would immediately find that $\mathbb{E}^{\mu}\big[ v_{\alpha,t}^2  \big] > c $, contradicting the definition of $Y_{T,c}$).
+%It is thus a consequence of \eqref{eq: uniformly integrable Y T c} that the following mapping is continuous over $Y_{T,c}$
+%\begin{align}
+%\mu \to  \int_0^t\sum_{\beta \in \NSet^q} \int \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_s)\mu(dy,du).
+%\end{align}
+
+\end{proof}
+
+%Let $X_{T,a} \subset X_T$ consist of all $\mu \in X_T$ such that
+%\begin{align}
+%\sup_{t\in [0,T]} \mathbb{E}^{\mu}\big[\| w_t\|^2] \leq a
+%\end{align}
+%and write
+%\begin{align}
+%X_T^* = \bigcup_{a \geq 0} X_{T,a}
+%\end{align}
+%Lets consider the dynamics with a bounded firing-rate function,
+%\begin{equation} \label{eq: v processes l bound}
+%  \begin{aligned}
+%    & dv^{(l),j}_{\alpha,t} = \bigg( - \sum_{\beta =1}^{q}  L_{\alpha\beta} v^{(l),j}_{\beta,t} 
+%    &\begin{aligned}[t]
+%      &+ n^{-1} \sum_{k=1}^n \sum_{\beta =1}^{q} 
+%        \mathcal{K}_{\alpha\beta}(x_j,x_k) f^{(l)}_{\beta}( v^{(l),k}_t) 
+%      + I_{\alpha,t}(x_j) \bigg) dt \\
+%      &+ \sum_{\beta = 1}^qG_{\alpha\beta,t}(x_j) dW^j_{\beta,t}, 
+%      \end{aligned}\\
+%    & v^{(l),i}_\alpha  = z_\alpha^i
+%  \end{aligned}
+%\end{equation}
+%and define the corresponding empirical measure
+%\begin{align}
+%\grave{\mu}^{(l),n}_T = n^{-1}\sum_{j=1}^n \delta_{x_j , v^{(l),j}} \in Y_T.
+%\end{align}
+We next define $\Phi_T:  X_{T} \to Y_T$ to be such that
+\begin{align}\label{eq: Phi T definition}
+\Phi_T(\mu) := \mu \circ \psi_T( \Phi_T(\mu) ,\cdot,\cdot,\cdot)^{-1}.
+\end{align}
+In words, $\Phi_T(\mu)$ is the push-forward of $\mu$ by the characteristic map $\psi_T$. %In the case that the following limit exists, we write
+%\begin{align}
+%\Phi_T(\mu) := \lim_{l\to\infty} \Phi^{(l)}_T(\mu).
+%\end{align}
+The transformation $\Phi_T$ is useful thanks to the following result.
+\begin{lemma} \label{Lemma Phi T lifts}
+With unit probability,
+\begin{align}\label{eq: Phi T lifts in Lemma}
+\grave{\mu}^{n}_T =\Phi_T\big( \tilde{\mu}^{n}_T \big),
+\end{align}
+\end{lemma}
+\begin{proof}
+This is almost immediate from the definitions.
+\end{proof}
+
+%We note also the following uniform approximation.
+%\begin{lemma}\label{Lemma Uniform Approximation}
+%For any $\delta , M > 0$, there exists $l_{\delta,M}$ such that for all $l\geq l_{\delta,M}$ and all $n\geq 1$,
+%\begin{align}
+% n^{-1}\log \mathbb{P}\big( d_{Y_T}(\grave{\mu}^n_T , \grave{\mu}^{(l),n}_T) \geq \delta  \big) \leq - M.
+%\end{align}
+%\end{lemma}
+%\begin{proof}
+%It follows from the definition of the Wasserstein Distance that
+%\begin{align}
+% d_{Y_T}(\grave{\mu}^n_T , \grave{\mu}^{(l),n}_T) \leq n^{-1}\sum_{j=1}^n \sup_{t\in [0,T]} \sup_{1\leq \alpha \leq q} \big| v^{(l),j}_{\alpha,t} - v^{j}_{\alpha,t} \big| .
+%\end{align}
+%We find that
+%\begin{multline}
+%dv^{j}_{\alpha,t}  - dv^{(l),j}_{\alpha,t} = \bigg( - \sum_{\beta =1}^{q}  L_{\alpha\beta}\big( v^{j}_{\beta,t} -  v^{(l),j}_{\beta,t}\big)
+%      + n^{-1} \sum_{k=1}^n \sum_{\beta =1}^{q} 
+        %\mathcal{K}_{\alpha\beta}(x_j,x_k)\big( f^{(l)}_{\beta}( v^{k}_t)  -
+        %f^{(l)}_{\beta}( v^{(l),k}_t) \big)\\
+  %n^{-1} \sum_{k=1}^n \sum_{\beta =1}^{q} 
+   %     \mathcal{K}_{\alpha\beta}(x_j,x_k)\big( f_{\beta}( v^{k}_t)  -  f^{(l)}_{\beta}( v^{k}_t) \big)
+%\end{multline}
+%Since the operator norm of $\mathcal{K}(\cdot,\cdot)$ is uniformly upperbounded (as proved in Lemma \ref{Lemma Averaged System Operator Norm}), there exists a constant $C > 0$ such that writing
+%\begin{align}
+% y_s = n^{-1}\sum_{j=1}^n \sup_{t\in [0,s]} \sup_{1\leq \alpha \leq q} \big| v^{(l),j}_{\alpha,t} - v^{j}_{\alpha,t} \big| 
+% \end{align}
+% for all $t\in [0,T]$,
+% \begin{align}
+% y_t \leq C\int_0^t  y_s + n^{-1}\sum_{j \in \mathbb{N}_n} \sup_{1\leq \alpha \leq q} \big| f^{(l)}_{\alpha}(v^j_s) -f _{\alpha}(v^j_s)  \big| ds  \label{eq: y t Gronwall bound}
+%\end{align}
+%It thus follows from \eqref{eq: y t Gronwall bound} that
+ %\begin{align}
+ %y_T \leq  \exp(CT) C \sup_{t\in [0,T]} n^{-1}\sum_{j \in \mathbb{N}_n} \sup_{1\leq
+ %\alpha \leq q} \big| f^{(l)}_{\alpha}(v_s) -f _{\alpha}(v_s)  \big|   \label{eq: y t Gronwall bound a}
+%\end{align}
+%Now
+%\begin{align}
+%n^{-1}\sum_{j \in \mathbb{N}_n} \sup_{1\leq \alpha \leq q} \big| f^{(l)}_{\alpha}(v^j_s) -f _{\alpha}(v^j_s)  \big| \leq n^{-1}\sum_{j \in \mathbb{N}_n} \sup_{1\leq \alpha \leq q} \big| f^{(l)}_{\alpha}(v^j_s) -f _{\alpha}(v^j_s)  \big| \\
+%\leq l^{-1} n^{-1}\sum_{j \in \mathbb{N}_n} \sup_{1\leq \alpha \leq q} \big| f _{\alpha}(v^j_s)  \big|^2
+%\end{align}
+%Furthermore thanks to Lemma \ref{Lemma Bound Square Norm v}, and the fact that (since $f$ is uniformly Lipschitz) 
+%\[
+%\big| f _{\alpha}(v^j_s)  \big| \leq \big| f _{\alpha}(0)  \big| + C_f \| v^j_s \| ,
+%\]
+%there exists $m> 0$ such that for all $n\geq 1$
+%\begin{equation}\label{eq: tempry m M}
+%n^{-1}\log \mathbb{P}\bigg(\sup_{t\in [0,T]} n^{-1}\sum_{j=1}^n \sum_{\alpha=1}^q \big| f _{\alpha}(v^j_s)  \big|^2 \geq m \bigg) \leq - M.
+%\end{equation}
+%Combining \eqref{eq: y t Gronwall bound a} and \eqref{eq: tempry m M}, we obtain the lemma.
+%0\end{proof}
+%We next define $\Phi_T:  X_{T} \to Y_T$ as follows. First define $(l_p)_{p\geq 1}$ to be an increasing sequence, such that
+%for all $l \geq l_p$ and all $n\geq 1$,
+%\begin{equation}
+%n^{-1}\log \mathbb{P}\big( d_{Y_T}(\grave{\mu}^n_T , \grave{\mu}^{(l),n}_T) \geq 2^{-p}  \big) \leq - p^2.
+%\end{equation}
+%This definition is possible thanks to Lemma \ref{Lemma Uniform Approximation}.
+%Now define
+%\begin{align}\label{eq: Phi T definition again}
+%\Phi_T(\mu) := \lim_{p\to\infty} \Phi_T^{(l_p)}(\mu) ,
+%\end{align}
+%in the case that the above limit exists. The set of all $\mu \in X_T$ such that the limit exists is written as $X_T^*$.
+%\begin{lemma}
+%With unit probability, $\grave{\mu}^n_T \in X_T^*$.
+%\end{lemma}
+%\begin{proof}
+%One checks that, for each $n\geq 1$,
+%\[
+%\sum_{p=1}^{\infty} \mathbb{P}\big( \big)
+%\]
+%This follows from an application of the Borel-Cantelli Lemma to 
+%\end{proof}
+
+\begin{lemma}
+For any $\mu \in X_T$ there exists a unique solution $\Phi_T(\mu) \in X_T$ to the fixed point identity \cref{eq: Phi T definition}. Furthermore the associated mapping $\mu \mapsto \Phi_T(\mu)$ is continuous over $X_{T}$.
+\end{lemma}
+\begin{proof}
+Fix $\mu \in X_{T}$. %Let $C_a > 0$ be the constant of Lemma \ref{Lemma mapping contained in}. 
+For any $\gamma \in Y_{T}$, define $\Gamma_{\mu,T}(\gamma) := \mu \circ \psi_T( \gamma ,\cdot,\cdot,\cdot)^{-1} \in Y_T$. % Thanks to Lemma  \ref{Lemma mapping contained in}, $\Gamma_{\mu,T}(\gamma) \in Y_{T,C_a}$.
+One easily checks that for any $\gamma,\tilde{\gamma} \in Y_{T}$, there is a constant $C > 0$ such that
+\begin{align}
+d_{Y_t}\big( \Gamma_{\mu,t}(\gamma) , \Gamma_{\mu,t}(\tilde{\gamma}) \big) \leq Ct d_{Y_t}\big( \gamma , \tilde{\gamma} \big).
+\end{align}
+Hence for small enough $t$, $\Gamma_{\mu,t}$ is a contraction and there is a unique fixed point solution $\mu_{*,t}$ to \cref{eq: Phi T definition}. 
+ 
+Next, define the space $\tilde{Y}_t$ to consist of all measures $\nu \in Y_T$ such that the law of the variables upto time $t$ is identical to $\mu_{*,t}$. For $\gamma,\tilde{\gamma} \in \tilde{Y}_t$  we find that for $s \geq t$,
+\begin{align}
+d_{Y_s}\big( \Gamma_s(\gamma) , \Gamma_s(\tilde{\gamma}) \big) \leq C(s-t) d_{Y_s}\big( \gamma , \tilde{\gamma} \big).
+\end{align}
+Furthermore the constant $C$ depends on $T$ only. Hence $\Gamma$ is a contraction for small enough $s-t$, and we obtain a unique fixed point in $\tilde{Y}_t$. Iterating this argument, we obtain a unique fixed point $\Phi_T(\mu)$ upto time $T$.
+
+For the continuity, let $\mu,\tilde{\mu} \in X_{T}$, and let $\xi_{\epsilon}$ be a measure that is within $\epsilon \ll 1$ of realizing the infimum in the definition of the Wasserstein metric. That is, we write $\xi_{\epsilon}$ to be the law of coupled random variables $(x,u_0,w) , (\tilde{x},\tilde{u}_0,\tilde{w}) \in D \times \mathbb{R}^q \times C([0,T],\mathbb{R}^q) $, and $\xi_{\epsilon}$ is such that
+\begin{align}
+\mathbb{E}^{\xi_{\epsilon}}\big[ \| x- \tilde{x} \| + \| u_0 - \tilde{u}_0 \| + \| w - \tilde{w} \|_T \big] \leq \epsilon.
+\end{align} 
+Write $\psi_T\big( \Phi_T(\mu) , x , u_0 ,  w \big) := (x,u_{[0,T]})$ and $\psi_T\big( \Phi_T(\tilde{\mu}) , \tilde{x} , \tilde{u}_0 , \tilde{w} \big) := (\tilde{x},\tilde{u}_{[0,T]})$. Substituting definitions, and employing the Lipschitz property in \eqref{eq: Lipschitz convolution}, we find that there is a constant $C > 0$ (chosen independently of $T$) such that
+\begin{multline}
+\sup_{t\leq T}\sup_{1\leq \alpha \leq q}\big| u_{\alpha}(t) - \tilde{u}_{\alpha}(t) \big| \leq \sup_{1\leq \alpha \leq q}\big| u_{\alpha}(0) - \tilde{u}_{\alpha}(0) \big| \\+ C \int_0^T \big\lbrace  \sup_{t\leq T}\sup_{1\leq \alpha \leq q}\big| u_{\alpha}(t) - \tilde{u}_{\alpha}(t) \big| + d_{Y_t}\big(\Phi_t(\mu) , \Phi_t(\tilde{\mu}) \big) \\
+ + \norm{ x-\tilde{x}} \big\rbrace dt + \sup_{t\leq T}\sup_{1\leq \alpha \leq q}\big| w_{\alpha}(t) - \tilde{w}_{\alpha}(t) \big| .
+\end{multline}
+Taking expectations of both sides with respect to $\xi_{\epsilon}$, and writing
+\begin{align}
+y_s = \mathbb{E}\big[ \sup_{t\leq s} \norm{ u_{\alpha}(t) - \tilde{u}_{\alpha}(t) } + \norm{x - \tilde{x}}\big],
+\end{align}
+we obtain that for all $t\geq 0$,
+\begin{align}
+y_t \leq \epsilon +  C \int_0^t\big\lbrace y_s +d_{Y_s}\big(\Phi_s(\mu) , \Phi_s(\tilde{\mu}) \big) +  d_{X_T}(\mu,\tilde{\mu}) + \epsilon  \big\rbrace ds +  d_{X_T}(\mu,\tilde{\mu}) 
+\end{align}
+since
+\[
+\mathbb{E}^{\xi_{\epsilon}} \big[ \sup_{t\leq T}\sup_{1\leq \alpha \leq q}\big| w_{\alpha}(t) - \tilde{w}_{\alpha}(t) \big| \big] \leq \epsilon + d_{X_T}(\mu,\tilde{\mu}).
+\]
+Note that, by definition of the Wasserstein Metric,
+\[
+d_{Y_s}\big(\Phi_s(\mu) , \Phi_s(\tilde{\mu}) \big) \leq y_s .
+\]
+Taking $\epsilon \to 0^+$, we thus find that
+\[
+d_{Y_t}\big(\Phi_t(\mu) , \Phi_t(\tilde{\mu}) \big) \leq C\int_0^t \big( 2 d_{Y_s}\big(\Phi_s(\mu) , \Phi_s(\tilde{\mu}) \big) + d_{X_T}(\mu,\tilde{\mu}) \big) ds + d_{X_T}(\mu,\tilde{\mu}).
+\]
+An application of Gronwall's Inequality then implies that there exists a constant $\tilde{C}_T$ such that
+\begin{align}
+d_{Y_T}\big(\Phi_T(\mu) , \Phi_T(\tilde{\mu}) \big) \leq \tilde{C}_T d_{X_T}(\mu,\tilde{\mu}).
+\end{align}
+Thus $\Phi_T$ is Lipschitz (and also continuous).
+\end{proof}
+
+%\subsection{Large Deviations}
+%
+%Our main aim in this section is to prove a Large Deviation Principle for the
+%probability laws of $\{  \grave{\mu}^n_T\}_{n \geq 1}$. 
+%
+%Although we have not yet defined the
+%function $\Phi_T$, we anticipate the rate
+%function for the coupled system to be
+%\[
+%\mathcal{J}_T: Y_T \to \mathbb{R}_{\geq 0}, \qquad 
+%  \mathcal{J}_T(\mu) = \inf\big\lbrace \mathcal{I}_T(\nu) \colon \text{ for  }\nu \in X_T \text{ such that }\Phi_T(\nu) = \mu \big\rbrace.
+%\]
+%The main result of this section is the following.
+%\begin{lemma}\label{lemma LDP Coupled System}
+%The function $\mathcal{J}_T$ is lower-semicontinuous and has compact level sets. Furthermore for any sets $\mathcal{A},\mathcal{O} \subset Y_T$, with
+%$\mathcal{A}$ closed and $\mathcal{O}$ open, 
+%\begin{align}
+%\lsup{n} n^{-1}\log P^n\big( \grave{\mu}^n_T  \in \mathcal{A} \big)  &\leq - \inf_{\mu \in \mathcal{A}} \mathcal{J}_T(\mu) \\
+%\linf{n} n^{-1}\log P^n\big( \grave{\mu}^n_T  \in \mathcal{O} \big)  &\geq - \inf_{\mu \in \mathcal{O}} \mathcal{J}_T(\mu) .
+%\end{align}
+%\end{lemma}
+
+\section{Bounding the Original Particle System}
+
+Our main results only concern the convergence of empirical averages of bounded
+continuous functions. In fact it is possible to show that the empirical average of
+certain unbounded continuous functions also converges. This is particularly desirable
+for our Gaussian Application, because Gaussian distributions are most conveniently
+described in terms of their first and second moments. The main result of this section is the following Corollary to Theorem 3.9.
+
+\begin{corollary}
+Let $h: \mathbb{R}^q \mapsto \mathbb{R}$ be continuous and such that
+\[
+ \| h(z) \| \leq \rm{Const} \| z \|^2.
+\]
+Then for any $t\leq T$, any continuous function $g: D \mapsto \mathbb{R}$, it holds that
+\begin{align}
+\lim_{n\mapsto \infty} \bigg| n^{-1} \sum_{j\in \mathbb{N}_n}g(x_n^j) h(u^j_t) - \mathbb{E}^{(x,u) \sim \bar{\mu}_t}\big[ g(x) h(u) \big] \bigg| = 0.
+\end{align}
+\end{corollary}
+\begin{proof}
+For any $c > 0$, define $h_c: \mathbb{R}^q \mapsto \mathbb{R}$ to be such that   
+\begin{align}
+h_{c}(u) = h( c u / \norm{u} ) \text{ in the case that }\norm{u} \geq c
+\end{align}
+and if $\norm{u} < c$, define $h_c(u) = h(u)$. Notice that $h_c$ is continuous and bounded, and also that
+\begin{equation} \label{eq: Gaussian h c tail}
+\lim_{c\to\infty} \sup_{t\leq T} \mathbb{E}^{(x,u) \sim \bar{\mu}_t}\big[ g(x) \big( h(u) - h_c(u) \big)\big]  = 0.
+\end{equation}
+Since $h_c$ is continuous and bounded, Theorem 1 implies that
+\begin{align} \label{eq: convergence h c }
+\lim_{n\to \infty} \bigg| n^{-1} \sum_{j\in I_n}g(x_n^j) h_c(u^j_t) - \mathbb{E}^{(x,u) \sim \bar{\mu}_t}\big[ g(x) h_c(u) \big] \bigg| = 0.
+\end{align}
+We therefore wish to show that
+\begin{equation} \label{eq: intermediate second moment corollary}
+\lim_{c\to\infty} \lim_{n\to \infty} \bigg| n^{-1} \sum_{j\in I_n}g(x^j_n) \big( h(u^j_t) - h_c(u^j_t) \big) \bigg| = 0.
+\end{equation}
+Indeed \eqref{eq: Gaussian h c tail}, \eqref{eq: convergence h c } and \eqref{eq: intermediate second moment corollary} suffice for the Corollary, because they imply that 
+ \begin{multline}
+\lim_{n\to \infty} \bigg| n^{-1} \sum_{j\in I_n}g(x^j_n) h(u^j_t) - \mathbb{E}^{(x,u) \sim \bar{\mu}_t}\big[ g(x) h(u) \big] \bigg| = \\
+ \lim_{c\to \infty} \lim_{n\to  \infty} \bigg| n^{-1} \sum_{j\in I_n}g(x^j_n) \big( h(u^j_t) - h_c(u^j_t) \big)\\ - \mathbb{E}^{(x,u) \sim \bar{\mu}_t}\big[ g(x) \big( h(u) - h_c(u) \big)\big] \bigg| = 0.
+\end{multline}
+It only remains to prove \eqref{eq: intermediate second moment corollary}, and in fact this is a consequence of Lemma \ref{Lemma tails for the second moment convergence} below.
+\end{proof}
+We next bound the tails of the second moment of the original particle system. %\eqref{eq:particleModel restated}.
+\begin{lemma} \label{Lemma tails for the second moment convergence}
+For any $\epsilon > 0$, there exists $c_{\epsilon} > 0$ such that 
+\begin{align}
+\lsup{n} n^{-1} \log \mathbb{P}\bigg( n^{-1} \sum_{j\in I_n} \| u^j_t \|^2 \chi\lbrace \| u^j_t \| \geq c_{\epsilon} \rbrace \geq \epsilon \bigg) < 0.
+\end{align}
+\end{lemma}
+\begin{proof}
+Write the matrix exponential as $Q_t = \exp\big( -tL \big)$. The solution of \eqref{eq:particleModel restated}, written in its mild form, satisfies the identity
+\begin{align}
+u^j_t = Q_t u^j_0 +\int_0^t Q_{t-s}  \Bigl(    \frac{1}{n} \sum_{k=1}^{n} \frac{1}{\phi_n}K^{jk} f(u^k_s) + I^j_s \Bigr) ds + \int_0^t  Q_{t-s} G^j_s dW^j_s .
+\end{align}
+Taking the norm of both sides, squaring, and then using the inequality $(a_1 + a_2 + a_3 + a_4)^2 \leq 4 a_1^2 + 4a_2^2 + 4a_3^2 + 4 a_4^2$, we find that
+\begin{multline}
+\| u^j_t \|^2 \leq 4 \| Q_t u^j_0 \|^2 + 4\left\| \int_0^t Q_{t-s} I^j_s ds \right\|^2 +  \\ 4 \left\| \int_0^t \frac{1}{n \phi_n} \sum_{k=1}^{n} Q_{t-s}  K^{jk} f(u^k_s) ds \right\|^2 + 4 \left\|  \int_0^t  Q_{t-s} G^j_s dW^j_s \right\|^2.
+\end{multline}
+Using Jensen's Inequality, and the fact that $|f| \leq f_{max}$, there is a constant such that
+\begin{align}
+ \left\| \int_0^t \frac{1}{n \phi_n} \sum_{k=1}^{n} Q_{t-s}  K^{jk} f(u^k_s) ds \right\|^2  \leq t \rm{Const}   \int_0^t\bigg( \frac{1}{n \phi_n} \sum_{k=1}^{n}   K^{jk}\bigg)^2  ds  .
+\end{align}
+Summing over $j$, and employing Hypothesis 3.5, we find that as long as $c_{\epsilon}$ is sufficiently large, it must hold that for all $t\leq T$,
+\begin{align}
+4 n^{-1}\sum_{j\in I_n}  \left\| \int_0^t \frac{1}{n \phi_n} \sum_{k=1}^{n} Q_{t-s}  K^{jk} f(u^j_s) ds \right\|^2 \leq \frac{1}{4} c_{\epsilon}.
+ \end{align}
+ Since it is assumed that the initial empirical measure converges, as long as $c_{\epsilon}$ is sufficiently large, 
+ \begin{align}
+\lsup{n} n^{-1}\sum_{j\in I_n}  4 \| Q_t u^j_0 \|^2 \leq \frac{1}{4} c_{\epsilon}.
+ \end{align}
+Now the inputs are assumed to be uniformly bounded, i.e.
+  \[
+  \sup_{j \in I_n} \sup_{s \leq T}  \| I^j_s \| < \infty,
+  \]  
+and hence as long as $c_{\epsilon}$ is sufficiently large, it must hold that
+ \begin{align}
+\lsup{n} n^{-1}\sum_{j\in I_n}  4 \left\| \int_0^t Q_{t-s} I^j_s ds \right\|^2  \leq \frac{1}{4} c_{\epsilon}.
+ \end{align}
+ For the stochastic integral, by Ito's Lemma,
+ \begin{multline}
+n^{-1}\sum_{j\in I_n}  \left\|  \int_0^t  Q_{t-s} G^j_s dW^j_s \right\|^2 = n^{-1}\sum_{j\in I_n} \int_0^t \rm{tr}\big( Q_{t-s} G^j_s ( G^j_s)^T Q_{t-s}^T \big) ds \\ + 2 n^{-1}\sum_{j\in I_n} \int_0^t (X^j_s)^T Q_{t-s} G^j_s dW^j_s
+ \end{multline}
+ where we have written
+ \[
+X^j_s =   \int_0^t  Q_{t-s} G^j_s dW^j_s \in \mathbb{R}^d.
+ \]
+ Since $\sup_{j\in I_n} \sup_{s \leq T} \| G^j_s \| < \infty$, it holds that there is a constant such that for all $n\geq 1$ and all $t\leq T$,
+ \[
+ n^{-1}\sum_{j\in I_n} \int_0^t \rm{tr}\big( Q_{t-s} G^j_s ( G^j_s)^T Q_{t-s}^T \big) ds < \rm{Const}.
+ \]
+ One can then show that for any $\delta > 0$,  
+ \begin{align}
+\sup_{n\geq 1}n^{-1} \log \mathbb{P}\bigg( 2 n^{-1}\sum_{j\in I_n} \int_0^t (X^j_s)^T Q_{t-s} G^j_s dW^j_s \geq \delta \bigg) < 0.
+ \end{align}
+We thus find that as long as $c_{\epsilon}$ is large enough
+\begin{align}
+\lsup{n} n^{-1} \log \mathbb{P} \bigg( n^{-1} \sum_{j\in I_n} 4 \left\|  \int_0^t  Q_{t-s} G^j_s dW^j_s \right\|^2 > \frac{1}{4} c_{\epsilon} \bigg) < 0.
+\end{align}
+Combining the above results, we can thus conclude that
+\begin{align}
+\lsup{n} n^{-1} \log \mathbb{P}\bigg( n^{-1} \sum_{j\in I_n} \| u^j_t \|^2 \chi\lbrace u^j_t \| \geq c_{\epsilon} \rbrace \geq \epsilon \bigg) < 0.
+\end{align}
+\end{proof}
+
+
+
+
+%\begin{lemma}\label{Lemma mapping contained in}
+%For each $a > 0$, there exists a constant $C_a > 0$ such that for any $ \gamma \in Y_{T,C_a}$ and $\mu \in X_{T,a}$, if we write $\nu = \Gamma_{\mu,T}(\gamma)$, it must hold that
+%\begin{align}
+%\nu \in Y_{T,C_a}.
+%\end{align}
+%\end{lemma}
+%\begin{proof}
+%Write $\nu = \Gamma_{\mu,T}(\gamma)$. We first claim that there is a constant $C$ such that 
+%\begin{multline}
+%\sup_{t\leq s} \mathbb{E}^{\nu}\big[ \| v_t \|^2 \big] \leq C\mathbb{E}^{\mu}\big[ \| z \|^2\big] + C \sup_{t\leq s} \mathbb{E}^{\mu}\big[ \| w_t \|^2 \big]\\ +   C \bigg\lbrace   s \sup_{t\leq s} \mathbb{E}^{\nu}\big[ \| v_t \|^2 \big] + s +\sup_{t\leq s} \mathbb{E}^{\gamma}\big[ \| v_t \|^2 \big]^{1/2}  \bigg\rbrace . \label{eq: first Gronwall temporary}
+%\end{multline}
+%To see this, notice that there must be a constant $c := 4q$ such that 
+%\begin{multline}
+%\sup_{t\leq s} \mathbb{E}^{\nu}\big[ \| v_t \|^2 \big] \leq c\mathbb{E}^{\mu}\big[ \| z \|^2\big]  + c\sup_{t\leq s} \mathbb{E}^{\mu}\big[ \| w_t \|^2 \big] + \\
+%c \mathbb{E}^{\nu}\bigg[ \bigg\|\int_0^s \bigg( - 
+%    \sum_{\beta \in \NSet_q}  L_{\alpha\beta} v_{\beta,t} 
+%  + \sum_{\beta \in \NSet_q} \mathbb{E}^{(y,u)\sim \gamma}\big[ \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_t) \big]+ I_{\alpha}(t,x)\bigg)  dt    \bigg\|^2 \bigg]
+%\end{multline}
+%Thanks to Jensen's Inequality,
+%\begin{multline}
+% \mathbb{E}^{\nu}\bigg[\bigg\| \int_0^s \bigg(  - 
+%    \sum_{\beta \in \NSet_q}  L_{\alpha\beta} v_{\beta,t} 
+%  + \sum_{\beta \in \NSet_q} \mathbb{E}^{(y,u)\sim \gamma}\big[ \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_t) \big]+ I_{\alpha}(t,x)\bigg) dt   \bigg\|^2 \bigg] \\
+%  \leq   s \int_0^s \mathbb{E}^{\nu}\bigg[ \bigg\| - 
+%    \sum_{\beta \in \NSet_q}  L_{\alpha\beta} v_{\beta,t} 
+%  + \sum_{\beta \in \NSet_q} \mathbb{E}^{(y,u)\sim \gamma}\big[ \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_t) \big]+ I_{\alpha}(t,x)\bigg\|^2   \bigg] dt 
+%\end{multline}
+%Now since the connectivity kernel $\mathcal{K}$ is uniformly upperbounded,
+%\begin{align}
+%\big| \mathbb{E}^{(y,u)\sim \gamma}\big[ \mathcal{K}_{\alpha\beta}(x,y) f_{\beta}(u_s) \big] \big| &\leq 
+%\sup_{x,y\in D}\sup_{\alpha,\beta \in \mathbb{N}_q} \big| \mathcal{K}_{\alpha\beta}(x,y) \big|  \mathbb{E}^{(y,u)\sim \gamma}\big[ \big| f_{\beta}(u_s) \big| \big] \nonumber \\
+%&\leq \mathbb{E}^{(y,u)\sim \gamma}\big[   f_{\beta}(u_s)^2  \big]^{1/2},
+%\end{align}
+%thanks to the Cauchy Schwarz Inequality. The other terms are easily bounded, and we thus obtain \eqref{eq: first Gronwall temporary}.
+%An application of Gronwall's Inequality to \eqref{eq: first Gronwall temporary} implies that there is a constant such that
+%\begin{align}
+%\sup_{t\leq T} \mathbb{E}^{\nu}\big[ \| v_t \|^2 \big] \leq \tilde{C}\mathbb{E}^{\mu}\big[ \| z \|^2\big] + \tilde{C} \sup_{t\leq T} \mathbb{E}^{\mu}\big[ \| w_t \|^2 \big] + \sup_{t\leq T} \mathbb{E}^{\gamma}\big[ \| v_t \|^2 \big]^{1/2} .
+%\end{align}
+%Thus as long as we take $C_a$ large enough, we obtain %the lemma.
+%\end{proof}
+%We can now prove \cref{Corollary Quenched LDP}.
+%\begin{proof}
+%It suffices to prove that for arbitrary $l > 0$
+%\begin{align}
+%\lsup{n} n^{-1} \log Q^n\bigg(  n^{-1}\log P^n_{K}( \hat{\mu}^n_T \in \mathcal{B}) + \inf_{\mu\in \mathcal{B}}\mathcal{J}_T(\mu)   \geq \epsilon  \bigg) \leq - l\\
+%\lsup{n} n^{-1} \log Q^n\bigg(  n^{-1}\log P^n_{K}( \hat{\mu}^n_T \in \mathcal{B}) + \inf_{\mu\in \mathcal{B}}\mathcal{J}_T(\mu)   \leq -\epsilon  \bigg) \leq - l.
+%\end{align}
+%Suppose first that $\mathcal{B}$ is open. For a positive integer $r > 0$, let $\mu^{(r)} \in \mathcal{B}$ be such that
+%\begin{equation}
+%\inf_{\mu\in \mathcal{B}}\mathcal{J}_T(\mu) \geq \mathcal{J}_T\big(\mu^{(r)} \big) - r^{-1}.
+%\end{equation}
+%Since $\mathcal{B}$ is open, let
+%\end{proof}
+
+\section{Proof that the Connectivity Assumptions are satisfied for a sparse Erdos-Renyi Random Digraph} \label{Section Connectivity Satisfied for Erdos Renyi Random Graphs}
+
+We prove that the connectivity assumptions in Hypothesis 3.5 are satisfied in the case that the connections take on values in $\lbrace -1,0,1\rbrace$ and are sampled independently from a probability distribution. More precisely, we take $\phi_n$ to be a positive sequence that decreases to zero, and such that there exists a constant $l > 0$ such that
+\begin{equation} \label{eq: summability of phi n}
+\sum_{n=1}^{\infty} \exp\big( - l n\phi_n \big) < \infty.
+\end{equation}
+It is also assumed that there exist continuous functions $p^+_{\alpha\beta}, p^-_{\alpha\beta} : D \times D \to \mathbb{R}^+$ such that
+\begin{align}
+\mathbb{P}\big( K^{jk}_{\alpha\beta} = 1 \big) &= \phi_n p^+_{\alpha\beta}(x^j_n,x^k_n)\label{eq: probability of positive connection} \\
+\mathbb{P}\big( K^{jk}_{\alpha\beta} = -1 \big) &= \phi_n p^-_{\alpha\beta}(x^j_n,x^k_n).\label{eq: probability of negative connection}
+\end{align}
+Furthermore it is assumed that $K^{jk}_{\alpha\beta}$ is probabilistically independent of $K^{ab}_{\gamma\delta}$ if either $a\neq j$, and /or $b \neq k$. This implies that the connectivity will not be symmetric (in general). We define the averaged connectivity to be such that
+\begin{align}
+\mathcal{K}_{\alpha\beta}(x,y) = p^+_{\alpha\beta}(x,y) - p^-_{\alpha\beta}(x,y).
+\end{align}
+
+We start by proving the following Lemma.
+\begin{lemma} \label{Lemma Bound Number of nonzero connections in row}
+For any $c \in \lbrace -1,1\rbrace$,
+    \begin{equation}\label{eq: absolute summability of connectivity sparseness appendix}
+\lsup{n}(n\phi_n)^{-1} \sup_{\alpha\in \mathbb{N}_q}\sup_{j\in \mathbb{N}_n}  \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace < \infty.
+    \end{equation}
+    \end{lemma}
+\begin{proof}
+Thanks to Chernoff's Inequality, for any $L > 0$, $c \in \lbrace -1,1 \rbrace$ and any 
+$j\in \mathbb{N}_n$, $\alpha \in \mathbb{N}_q$, for any $a > 0$,
+\begin{align*}
+\mathbb{P}\bigg( \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace \geq L n\phi_n  \bigg) \leq
+ \mathbb{E}\bigg[ \exp\bigg( a\sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace -a L n \phi_n \bigg) \bigg].
+\end{align*}
+Our assumptions \eqref{eq: probability of positive connection}-\eqref{eq: probability of negative connection} dictate that there is a constant $C> 0$ such that for all $j,k\in \mathbb{N}_n$ and $\alpha \in \mathbb{N}_q$, 
+\begin{align}
+ \mathbb{E}\bigg[ \exp\bigg( a \sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace \bigg) \bigg] \leq 1 + \phi_n C\big( \exp(qa) - 1 \big).
+\end{align}
+We thus find that
+\begin{multline}
+\mathbb{E}\bigg[ \exp\bigg( a\sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace -a L n \phi_n \bigg) \bigg] \\
+\leq \exp\bigg( n\phi_n C\big( \exp(qa) - 1 \big) - a L n \phi_n \bigg).
+\end{multline}
+Thus for large enough $L$,
+\begin{align}
+\mathbb{P}\bigg( \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace \geq L n\phi_n  \bigg) \leq \exp(-ln \phi_n).
+\end{align}
+Thus, thanks to assumption \eqref{eq: summability of phi n},
+\[
+\sum_{n=1}^{\infty} \mathbb{P}\bigg( \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace \geq L n\phi_n  \bigg) < \infty .
+\]
+An application of the Borel-Cantelli Lemma then implies that
+    \begin{equation}
+\lsup{n}(n\phi_n)^{-1} \sup_{\alpha\in \mathbb{N}_q}\sup_{j\in \mathbb{N}_n}  \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace \leq L.
+    \end{equation}
+\end{proof}
+We next obtain a bound on the operator norm of the connectivity matrix. For a constant $c > 0$, define the event
+\begin{multline}
+\mathcal{Q}_n = \bigg\lbrace   \sup_{w \in \mathbb{R}^{nq} : \| w \| = 1} \sum_{j,k \in \mathbb{N}_n} \sum_{\alpha,\beta \in \mathbb{N}_q}\chi\big\lbrace K^{jk}_{\alpha\beta} = 1 \big\rbrace w^j_{\alpha} w^k_{\beta} \leq c n\phi_n \text{ and }\\   \sup_{w \in \mathbb{R}^{nq} : \| w \| = 1} \sum_{j,k \in \mathbb{N}_n} \sum_{\alpha,\beta \in \mathbb{N}_q}\chi\big\lbrace K^{jk}_{\alpha\beta} = -1 \big\rbrace w^j_{\alpha} w^k_{\beta} \leq c n\phi_n  \bigg\rbrace .
+ \end{multline}
+ We notice that if the event $\mathcal{Q}_n$ holds, then necessarily
+ \begin{align} \label{eq: bound operator norm last section}
+ \sup_{w \in \mathbb{R}^{nq} : \| w \| = 1} \sum_{j,k \in \mathbb{N}_n} \sum_{\alpha,\beta \in \mathbb{N}_q}  K^{jk}_{\alpha\beta}   w^j_{\alpha} w^k_{\beta} \leq 2 c n \phi_n.
+ \end{align}
+ \begin{lemma}
+There exists a constant $c > 0$ such that, with unit probability there exists a random integer $n_0$ such that for all $n \geq n_0$, the event $\mathcal{Q}_n$ holds.
+ \end{lemma}
+ \begin{proof}
+Thanks to the Perron-Frobenius Thoerem, for $a \in \lbrace -1,1 \rbrace$,
+\begin{align}
+\sup_{w \in \mathbb{R}^{nq} : \| w \| = 1} \sum_{j,k \in \mathbb{N}_n} \sum_{\alpha,\beta \in \mathbb{N}_q}\chi\big\lbrace K^{jk}_{\alpha\beta} = a \big\rbrace w^j_{\alpha} w^k_{\beta} \leq \sup_{\alpha\in \mathbb{N}_q}\sup_{j\in \mathbb{N}_n}  \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =a \rbrace .
+\end{align}
+The Lemma is thus a consequence of Lemma \ref{Lemma Bound Number of nonzero connections in row}.
+ \end{proof}
+The next lemma concerns the limits of the constants $R^n$ of Hypothesis 3.5. 
+\begin{lemma}
+With unit probability,
+\begin{align}
+\lim_{n\to\infty}R^n = 0.
+\end{align}
+\end{lemma}
+\begin{proof}
+Define
+\begin{align*}
+&R^n_+ = n^{-1}\sup_{\alpha \in \mathbb{N}_q}\sup_{y\in [-1,1]^{qn} }\sum_{j \in \mathbb{N}_n , \alpha \in \mathbb{N}_q} &&\bigg(  n^{-1}\sum_{k\in \mathbb{N}_n , \beta \in \mathbb{N}_q}\bigg( \phi_n^{-1} \chi\big\lbrace K^{jk}_{\alpha\beta} = 1 \big\rbrace \\ & &&  -   p^+_{\alpha\beta}(x^j_n , x^k_n) \bigg) y^k_{\beta} \bigg)^2 \\
+&R^n_- = n^{-1}\sup_{\alpha \in \mathbb{N}_q}\sup_{y\in [-1,1]^{qn} }\sum_{j \in \mathbb{N}_n , \alpha \in \mathbb{N}_q} &&\bigg(  n^{-1}\sum_{k\in \mathbb{N}_n , \beta \in \mathbb{N}_q}\bigg( \phi_n^{-1} \chi\big\lbrace K^{jk}_{\alpha\beta} = -1 \big\rbrace \\ & &&  -   p^-_{\alpha\beta}(x^j_n , x^k_n) \bigg) y^k_{\beta} \bigg)^2
+\end{align*}
+It suffices that we show that
+\begin{align}
+% \sup_{y\in [-1,1]^{qn} } n^{-1}\sum_{j \in \mathbb{N}_n , \alpha \in \mathbb{N}_q}\bigg( \sum_{k\in \mathbb{N}_n , \beta \in \mathbb{N}_q}\big( \phi_n^{-1} \chi\lbrace K^{jk}_{\alpha\beta} = 1 \rbrace -   p^+_{\alpha\beta}(x^j_n , x^k_n) \big) y^k_{\beta} \bigg)^2 =0
+\lim_{n\to\infty} R^n_- =& 0 \label{eq: p minus last part in lemma}  \\
+\lim_{n\to\infty} R^n_+ =& 0. \label{eq: p plus last part in lemma}  
+ % \sup_{y\in [-1,1]^{qn} } n^{-1}\sum_{j \in \mathbb{N}_n , \alpha \in \mathbb{N}_q}\bigg( \sum_{k\in \mathbb{N}_n , \beta \in \mathbb{N}_q}\big( \phi_n^{-1} \chi\lbrace K^{jk}_{\alpha\beta} = -1 \rbrace -   p^-_{\alpha\beta}(x^j_n , x^k_n) \big) y^k_{\beta} \bigg)^2 =0 
+\end{align}
+Since the proofs are almost identical, we only prove \eqref{eq: p plus last part in lemma}. %Recall that %\begin{align*}
+%R^n_+ =& n^{-1}\sup_{\alpha \in \mathbb{N}_q}\sup_{y\in [-1,1]^{qn} }\sum_{j \in \mathbb{N}_n , \alpha \in \mathbb{N}_q}\bigg(  n^{-1}\sum_{k\in \mathbb{N}_n , \beta \in \mathbb{N}_q}\big( \phi_n^{-1} \chi\lbrace K^{jk}_{\alpha\beta} = 1 \rbrace  \\ &  -   p^+_{\alpha\beta}(x^j_n , x^k_n) \big) y^k_{\beta} \bigg)^2 .
+%\end{align*}
+For $y\in [-1,1]^{qn}$, define
+\[
+  h^j_{\alpha}(y) = n^{-1} \bigg| \sum_{k=1}^n \sum_{\beta=1}^q \big( \phi_n^{-1} \chi\lbrace K_{\alpha\beta}^{jk} = 1 \rbrace - p^+_{\alpha\beta}(x_n^j,x_n^k) \big) y^k_{\beta} \bigg|.
+\]
+We need to show that
+\begin{equation} \label{eq: to show square norm h j alpha}
+\lim_{n\to\infty}\bigg\lbrace n^{-1} \sup_{y\in [-1,1]^{qn}} \sup_{\alpha \in \mathbb{N}_q}\sum_{j\in I_n} h^j_{\alpha}(y)^2 \bigg\rbrace = 0.
+\end{equation}
+For a constant $C > 0$, define also the event
+\begin{equation}
+\mathcal{U}_n = \bigg\lbrace \text{For }c=\pm 1, \; \; \sup_{\alpha\in \mathbb{N}_q}\sup_{j\in \mathbb{N}_n}  \sum_{k\in \mathbb{N}_n}\sum_{\beta\in\mathbb{N}_q} \chi\lbrace K^{jk}_{\alpha\beta} =c \rbrace \leq C n\phi_n \bigg\rbrace .
+\end{equation}
+The constant $C > 0$ is taken to be large enough that $\mathcal{U}_n$ always holds (for large enough $n$), which is possible thanks to Lemma \ref{Lemma Bound Number of nonzero connections in row}.
+
+For $m \in \mathbb{Z}^+$, we decompose
+\begin{equation}
+y^j_{\alpha} = y^{(m),j}_{\alpha} + \tilde{y}^{(m),j}_{\alpha}
+\end{equation}
+where $\tilde{y}^{(m),j}_{\alpha} \in [0, m^{-1})$ and $y^{(m),j}_{\alpha} = am^{-1}$ for some integer $a$. Write
+\begin{align}
+\mathcal{S}^n_m = \big\lbrace y \in [-1,1]^{qn} \; : \; y^j_{\alpha} = a^j_{\alpha} / m \text{ for some integer }a^j_{\alpha} \big\rbrace.
+\end{align}
+Notice that
+\begin{equation}
+\lsup{n} n^{-1} \log \big| \mathcal{S}^n_m \big| < \infty. 
+\end{equation}
+We write
+\begin{align}
+ \sum_{j\in \mathbb{N}_n} \big( h^j_{\alpha}(y)\big)^2 =&  \sum_{j\in \mathbb{N}_n}\big\lbrace  h^{j}_{\alpha}(y^{(m)})^2 + h_{\alpha}^j(\tilde{y}^{(m)})^2 + 2h^j_{\alpha}(y^{(m)})h^j_{\alpha}(\tilde{y}^{(m)}) \big\rbrace \nonumber \\
+ \leq &  \sum_{j\in \mathbb{N}_n}\big\lbrace  h^{j}_{\alpha}(y^{(m)})^2 + h_{\alpha}^j(\tilde{y}^{(m)})^2\big\rbrace\nonumber \\
+ &+ 2\bigg\lbrace \sum_{j\in \mathbb{N}_n} h^{j}_{\alpha}(y^{(m)})^2 \bigg\rbrace^{1/2} \bigg\lbrace  \sum_{j\in \mathbb{N}_n}  \tilde{h}^{j}_{\alpha}(y^{(m)})^2 \bigg\rbrace^{1/2},\label{eq: cauchy-schwarz inequality at end}
+\end{align}
+thanks to the Cauchy-Schwarz Inequality. Furthermore one verifies that (as long as the event $\mathcal{U}_n$ holds), for all $j\in \mathbb{N}_n$ and all $\alpha\in\mathbb{N}_q$,
+\begin{align}
+ \big| h_{\alpha}^j(\tilde{y}^{(m)}) \big| \leq C m^{-1} +qm^{-1} \sup_{x,y\in \mathcal{D}, \beta \in \mathbb{N}_q}  p^{+}_{\alpha\beta}(x,y) 
+ := \tilde{C} m^{-1},
+ \end{align}
+ and the RHS evidently goes to $0$ uniformly as $m\to\infty$.  In light of \eqref{eq: cauchy-schwarz inequality at end}, in order that \eqref{eq: to show square norm h j alpha} holds it thus suffices that we show that
+ \begin{align}
+  \lim_{m\to\infty}   \lim_{n\to\infty} n^{-1} \sup_{\alpha \in \mathbb{N}_q} \sup_{y\in \mathcal{S}^n_m}\sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 = 0. \label{eq: to show lim m lapha n }
+ \end{align}
+ Now for any $\delta > 0$, using a union-of-events bound,
+ \begin{align}
+\mathbb{P}\big( \sup_{y\in \mathcal{S}^n_m}  \sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 \geq n\delta , \mathcal{U}_n \big) \leq & \big| \mathcal{S}^n_m \big| \sup_{y\in \mathcal{S}^n_m} \mathbb{P}\bigg( \mathcal{U}_n,  \sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 \geq n\delta \bigg) \nonumber \\
+=& (m+1)^n \sup_{y\in \mathcal{S}^n_m} \mathbb{P}\bigg( \mathcal{U}_n,    \sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 \geq n\delta \bigg) . \label{eq: temporary intermediate bound h squared}
+ \end{align}
+ Thanks to the Borel-Cantelli Lemma, in order that \eqref{eq: to show lim m lapha n } holds it suffices that we show that for arbitrary $\delta > 0$,
+ \begin{align}
+    \lsup{n} n^{-1} \log  \sup_{y\in \mathcal{S}^n_m} \mathbb{P}\big( \mathcal{U}_n,   \sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 \geq n\delta \big) = -\infty, \label{eq: to show intermediate y j alpha squared} 
+ \end{align}
+ since \eqref{eq: temporary intermediate bound h squared} and \eqref{eq: to show intermediate y j alpha squared} imply that
+ \begin{align}
+\sum_{n=1}^{\infty} \mathbb{P}\bigg( \sup_{y\in \mathcal{S}^n_m} \sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 \geq n\delta , \mathcal{U}_n \bigg) < \infty.
+ \end{align}
+To this end, define
+\begin{align}
+g^j_{\epsilon}(y) = \chi\big\lbrace \sup_{\alpha\in \mathbb{N}_q} h^j_{\alpha}(y) \geq \epsilon \big\rbrace .
+\end{align}
+Notice that if the event $\mathcal{U}_n$ holds, then
+\[
+\big| h^j_{\alpha}(y) \big| \leq C + \sup_{\beta\in \mathbb{N}_q} \sup_{x,z \in D} p^+_{\alpha\beta}(x,z)  := \bar{C}.
+\]
+This means that (as long as the event $\mathcal{U}_n$ holds), then for all $y\in [-1,1]^{nq}$,
+\begin{equation}
+ n^{-1}\sum_{j\in \mathbb{N}_n}h^j_{\alpha}(y)^2 \leq \bar{C}^2  n^{-1}\sum_{j\in \mathbb{N}_n} g^j_{\epsilon}(y) + \epsilon^2 .
+\end{equation}
+In order that \eqref{eq: to show intermediate y j alpha squared} holds, it thus suffices that we show that for arbitrary $\epsilon > 0$,
+\begin{align}
+\lim_{n\to\infty} n^{-1}\log \sup_{y\in \mathcal{S}^n_m} \mathbb{P}\big( n^{-1} \sum_{j\in \mathbb{N}_n} g^j_{\epsilon}(y) \geq \epsilon \big) = -\infty.    
+\end{align}
+To this end, by Chernoff's Inequality, for a constant $a > 0$,
+\begin{align}
+\mathbb{P}\big( n^{-1} \sum_{j\in \mathbb{N}_n} g^j_{\epsilon}(y) \geq \epsilon \big) \leq & \mathbb{E}\bigg[ \exp\bigg( a\sum_{j\in \mathbb{N}_n} g^j_{\epsilon}(y) - a \epsilon n \bigg) \bigg] \nonumber \\
+=& \exp\big(-a \epsilon n \big) \prod_{j\in \mathbb{N}_n}\bigg(1 + \mathbb{P}\big( g^j_{\epsilon}(y) = 1 \big) \big( \exp(a) - 1 \big) \bigg) \nonumber\\
+\leq & \exp\bigg( n p_n \big( \exp(a) -1 \big) - a \epsilon n \bigg) 
+\end{align}
+where 
+\[
+p_n = \sup_{y\in \mathcal{S}^n_m} \sup_{j\in \mathbb{N}_n} \mathbb{P}\big( g_{\epsilon}^j(y) =1 \big).
+\]
+We define $a = - \log p_n$, and it remains for us to prove that
+\begin{align}
+\lim_{n\to\infty} p_n = 0. \label{eq: p n limit}
+\end{align}
+In fact \eqref{eq: p n limit} follows almost immediately from the Hoeffding Inequality \cite{Massart2019}.
+\end{proof}
+
+%\subsection{Central Limit Theorem}
+%
+%We make some brief comments on the Central Limit Theorem. Let $g \in C^2(\mathbb{R}^d)$ be uniformly bounded, and define the stochastic variable
+%\begin{align}
+%Y_t =  \sqrt{n} \big( n^{-1} \sum_{j\in I_n} g(u^j_t) - \mathbb{E}^{(x,u) \sim \bar{\mu}_t}[ g(u) ] \big)
+%\end{align}
+%Thanks to Ito's Lemma
+%\begin{align}
+%dY_t = 
+%\end{align}
+%
+%\begin{equation}\label{eq:particleModel}
+%  \begin{aligned}
+%    & du^j_t = \Bigl(-L u^j_t + \frac{1}{n \phi_n} \sum_{k=1}^{n} K^{jk} f(u^j_t) + I^j_t\Bigr) dt + G^j_t dW_t, 
+%    && (j,t) \in \NSet_n \times [0,T], \\ 
+%    & u^j_0 = z^j,
+%    && j \in \NSet_n
+%  \end{aligned}
+%\end{equation}
+
+
+
+\subsection{Example of noise-induced Turing-like bifurcation}
+\label{ssec:turingExampleOld} 
+\begin{figure}
+  \centering
+  \includegraphics{turing}
+  \caption{Noise-induced Turing-like bifurcation for the particle and mean-field
+    model with one population ($q=1$), posed on a ring of width $2l$, with synaptic
+    kernel \cref{eq:ADefOld}, neuronal firing rate \cref{eq:particleFiringRateOld}, and
+    mean-field firing rate \cref{eq:firingRateMeanFieldOld}. (a): values $\{ \gamma_k
+    \}_k$ (defined as in the main text of the manuscript),
+    show that a Turing-like bifurcation of the homogeneous steady state is located
+    between $\sigma = 0.35$ and $\sigma = 0.36$, with critical wavenumber $k_c =
+  15$. (b) Curves $\gamma_k(\sigma)$ for $k = \{0, \pm 1, \ldots, \pm 20 \}$ show
+  that the branch of homogeneous steady states is stable when there is no noise
+  ($\sigma = 0$) and undergoes two noise-induced Turing-like bifurcations at $\sigma =
+  \sigma_{1,2}$, both for $k_c = 15$. (c): numerical bifurcation analysis for spatially-extended
+  equilibria of the mean-field shows that the first bifurcation is subcritical,
+  while the second one is supercritical (dashed lines represent unstable branches).
+Numerical simulations of the particle system with kernel matrix for $n = 128$
+(e), $n = 8192$ (f), and the mean-field for $\sigma = 0.58 \in
+(\sigma_1,\sigma_2)$ confirm that the bifurcation structure in (c). Parameters:
+$L =1$, $l =10 \pi$, $I(t,x) \equiv 0$, $G(x,t) \equiv \sigma$, $B = 1.5$, $C = 7$,
+$\alpha = 10$, $\theta = 0.4$, $m_0(x) = 0.3\cos(k_c \pi x/l)$. 
+}
+  \label{fig:turing}
+\end{figure}
+
+\rev{
+We give a further example of Turing-like bifurcation, in a model with a kernel that
+does not support localised solutions, as shown in the main text. We consider a network with $q=1$ on
+a ring of width $2l$, $D = \RSet/2l\ZSet$ with distance dependent kernel $\calK(x,y)
+= A(x-y)$, where 
+\begin{equation}\label{eq:ADefOld}
+  A(x) = \frac{C}{\sqrt{\pi}} e^{-x^2} - \frac{C}{B \sqrt{\pi}} e^{-(x/B)^2}, \qquad
+  B \in \RSet_{>1}, \qquad C \in \RSet_{>0},
+\end{equation}
+linear coupling $L =1$, forcing $I(t,x) \equiv 0$, $G(t,x) \equiv \sigma$, and with
+firing rate function 
+\begin{equation}\label{eq:particleFiringRateOld}
+  f(u) = \Phi(\alpha(u-\theta)), \qquad \Phi(u) = \frac{1}{2}\biggl[1 + \erf\biggl(\frac{u}{\sqrt{2}}\biggr)\biggr],
+  \qquad 
+  \alpha \in \RSet_{>0},
+  \quad
+  \theta \in \RSet,
+% phi = @(x) 0.5*(1+erf(x/sqrt(2)));
+% f = @(u) phi(alpha*(u-theta));
+\end{equation}  
+which results in a mean-field firing rate of the form
+\cite{touboulNoiseInducedBehaviorsNeural2012a}
+\begin{equation}\label{eq:firingRateMeanFieldOld}
+  F(m,v) = \Phi\biggl(\alpha \frac{m-\theta}{\sqrt{1+\alpha^2 v}}\biggr).
+\end{equation}
+
+The synaptic kernel $A$ is locally excitatory and laterally inhibitory, and has been
+selected here as it is \textit{balanced}, in the sense that its integral over $\RSet$
+is null. If $D = \RSet$, it can be shown that $m_*=0$ is a homogeneous equilibrium for any value of $\sigma$. We
+consider the problem on a ring of width $2l$, hence
+\[
+  \int_{-l}^{l} A(x) \,d x = C ( \erf{l} - \erf{(l/B)} ),
+\]
+which, for large $l$ is approximately null. We have computed a branch of
+$\sigma$-dependent homogeneous steady states using Newton's scheme, and the computed
+values of $m_*$ do not appreciably differ from $0$ in the selected parameter range. 
+
+In \cref{fig:turing}(a) we show $\{ \gamma_k \}_{k \in \NSet_{50}}$ for two
+values of $\sigma$, which provides evidence of a bifurcation at $\sigma_c \in
+(0.35,0.36)$ with wavenumber $k_c = 15$. In \cref{fig:turing}(b) we computed the
+curves $\gamma_k(\sigma)$ for $k = \{ 0,\pm 1, \ldots, \pm 20 \}$, from which we
+deduce that the homogeneous steady state is stable in the noiseless case $\sigma = 0$,
+and it undergoes two Turing-like bifurcations induced by noise. 
+
+We employed numerical bifurcation analysis tools to study the
+bifurcation structure of steady states to of the mean-field equation (see
+\cref{fig:turing}(c)). We see that the primary bifurcation $T_1$ is subcritical, and
+a branch of stable spatially-periodic steady states emerge. In contrast, the
+secondary bifurcation, $T_2$, is supercritical and gives rise to stable
+spatially-periodic equilibria. 
+
+We carried out time simulations of the particle system with varying numbers of
+neurons, and of the mean-field equation to confirm the predictions of the numerical
+bifurcation analysis in \cref{fig:turing}(d)--(f). 
+}
+
+\bibliographystyle{siamplain}
+\bibliography{neuralfieldsbib}
+
+\end{document}
