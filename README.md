@@ -1,6 +1,6 @@
 [![DOI](https://zenodo.org/badge/899242254.svg)](https://doi.org/10.5281/zenodo.14616641)
 
-Codes for the paper Daniele Avitabile and James MacLaurin, Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks, 2024 
+Repository for the paper Daniele Avitabile and James MacLaurin, Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks, 2024 
 
 ```
 @misc{avitabile2024neuralfieldsnoiseinducedpatterns,
