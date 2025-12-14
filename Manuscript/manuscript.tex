@@ -112,7 +112,7 @@
 \renewcommand{\epsilon}{\varepsilon}
 \renewcommand{\phi}{\varphi}
 
-\newcommand{\rev}[1]{{\color{magenta} #1}} 
+\newcommand{\rev}[1]{{\color{black} #1}} 
 
 % Sets running headers as well as PDF title and authors
 \title{Neural Fields and Noise-Induced Patterns in Neurons on Large Disordered Networks}
@@ -2170,7 +2170,6 @@ James MacLaurin would like to acknowledge funding from NSF  DMS-2511615.
 
 \appendix
 \section{Proof of \cref{lem:contraction}}\label{sec:appendixProofContraction}
-\textcolor{blue}{
 \begin{proof} Fix $x \in D$, set $V_x(t) = V(x,t)$, $G_x = G(x)G^T(x)$, and rewrite
   the second and fourth equation in \cref{eq:meanField} as the following ODE on
   $\RSet^{q \times q}$
@@ -2206,8 +2205,6 @@ The result now follows from recalling that $\| V_x(t) \|_{F} = \| v_x(t)
 V_0(x)$ are in $C(D,\RSet^{q \times q})$, then so is $x \mapsto v_x(t)$ for any $t
 \in \RSet_{\geq 0}$.
 \end{proof}
-}
-%We anticipate that many other pattern and wave solutions will be found because one can adapt the existing techniques for the existing Wilson Cowan equations. We also proved a Large Deviation Principle: in future work we plan to leverage this to characterize the transition pathways between attractors in the neural network induced by finite-size effects.
 
 
 \bibliographystyle{siamplain}
